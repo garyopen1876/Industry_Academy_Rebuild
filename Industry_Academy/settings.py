@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'web',
     #'student',
     'company',
-    #'manager',
+    'manager',
     #'inter_ship',
     #'tutor',
     #'match',

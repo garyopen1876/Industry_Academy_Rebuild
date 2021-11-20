@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% block title %} 資工產媒-媒合系統  {% endblock %}
+{% block headmessage %}
+    <header>
+        <h2>歡迎使用!</h2>
+        <p>助教平台.</p>
+    </header>
+{% endblock %}
+{% block content %}
+   <section class="box special features">
+        <div class="features-row">
+            <section>
+                <span class="icon major fa-user-plus accent1"></span>
+                <h3><a href="/system/manager/createUser">新增用戶</a></h3>
+                <p>新增學生或企業使用者帳戶</p>
+            </section>
+            <section>
+                <span class="icon major fa-edit accent4"></span>
+                <h3><a href="/system/manager/postManage">公佈欄管理</a></h3>
+                <p>新增、編輯、刪除公佈欄訊息</p>
+            </section>
+        </div>
+        <div class="features-row">
+            <section>
+                <span class="icon major fa-calendar accent2"></span>
+                <h3><a href="/system/manager/schedule">編訂排程</a></h3>
+                <p>設定各流程階段開放時間</p>
+            </section>
+            <section>
+                <span class="icon major fa-handshake-o accent5"></span>
+                <h3><a href="/system/manager/match">媒合</a></h3>
+                <p>進行媒合</p>
+            </section>
+        </div>
+        <div class="features-row">
+            <section>
+                <span class="icon major fa-building accent3"></span>
+                <h3><a href="/system/manager/managerCompany">企業資訊</a></h3>
+                <p>各企業的詳細資訊</p>
+            </section>
+            <section>
+                <span class="icon major fa-id-card accent4"></span>
+                <h3><a href="/system/manager/managerStudentCompany">學生投遞公司總覽</a></h3>
+                <p>各學生投遞的公司</p>
+            </section>
+        </div>
+       <div class="row gtr-50 gtr-uniform">
+           <div class="col-10 col-12-mobilep">
+           </div>
+           <div class=" col-2 col-12-mobilep">
+               <ul class="actions special">
+                   <li><a href="/admin" class="button alt small icon fa-database">後台資料管理</a></li>
+               </ul>
+           </div>
+       </div>
+    </section>
+{% endblock %}

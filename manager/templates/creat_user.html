@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% block title %} 資工產媒-新增用戶  {% endblock %}
+{% block headmessage %}
+    <header>
+        <h2>助教新增使用者用戶</h2>
+        <p>請輸入使用者的帳號、密碼與身分.</p>
+    </header>
+{% endblock %}
+{% block content %}
+    <div class="box">
+        <form action="" method="POST">
+            {% csrf_token %}
+            <div align='center'>
+                {% if request.user.profile.role == 2 %}
+                    <span align='center' class="icon major fa-building accent3"></span>
+                {% elif request.user.profile.role == 4 %}
+                    <span align='center' class="icon major fa-user accent4"></span>
+                {% endif %}
+            </div>
+            {% if message %}
+                <div class="alert alert-warning" style="color: red">{{message}}</div>
+                <br/>
+            {% endif %}
+            <div class="col-12">
+                <h4>密碼長度至少8字元</h4>
+                <h4>不能與帳戶雷同且不能全是數字</h4>
+            </div>
+            <div class="row gtr-50 gtr-uniform">
+                <div class="col-12">
+                    <input type="text" name="userID" id="userID" value="" placeholder="使用者帳號" required/>
+                </div>
+                <div class="col-12">
+                    <input type="password" minlength="8" name="password" id="password" value="" placeholder="密碼 [至少8個字元]" autocomplete=off required/>
+                </div>
+                <div class="col-12">
+                    <input type="password" minlength="8" name="check" id="check" value="" placeholder="確認密碼" autocomplete=off required/>
+                </div>
+                <div class="col-12">
+                    <p>身分：</p>
+                </div>
+                <div class="col-12">
+                    <input type="radio" name="role" id="student" value="2">
+                    <label for="student">企業-人資</label>
+                </div>
+                <div class="col-12">
+                    <input type="radio" name="role" id="company" value="4">
+                    <label for="company">企業-實習導師</label>
+                </div>
+                <div class="col-12">
+                    <ul class="actions special">
+                        <li><input type="submit" value="儲存" /></li>
+                        <li><input type="reset" value="清除重填" /></li>
+                    </ul>
+                </div>
+                <div class="col-10 col-12-mobilep">
+                </div>
+                <div class=" col-2 col-12-mobilep">
+                    <ul class="actions special">
+                        <li><a href="/system/manager" class="button alt small icon fa-reply">上一頁</a></li>
+                    </ul>
+                </div>
+            </div>
+        </form>
+    </div>
+{% endblock %}

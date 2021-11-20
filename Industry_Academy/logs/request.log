@@ -303,3 +303,49 @@ Traceback (most recent call last):
   File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\db\models\fields\related_descriptors.py", line 424, in __get__
     self.related.get_accessor_name()
 django.contrib.auth.models.User.profile.RelatedObjectDoesNotExist: User has no profile.
+[20/Nov/2021 18:37:47] ERROR [django.request:230] Internal Server Error: /company/
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\user\PycharmProjects\Industry_Academy\company\views.py", line 9, in show_company
+    if request.user.profile.role == Profile.COMPANY:
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\utils\functional.py", line 247, in inner
+    return func(self._wrapped, *args)
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\db\models\fields\related_descriptors.py", line 424, in __get__
+    self.related.get_accessor_name()
+django.contrib.auth.models.User.profile.RelatedObjectDoesNotExist: User has no profile.
+[20/Nov/2021 18:45:31] WARNING [django.request:230] Not Found: /system
+[20/Nov/2021 18:46:26] ERROR [django.request:230] Internal Server Error: /manager/
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\user\PycharmProjects\Industry_Academy\manager\views.py", line 18, in show_manager
+    if request.user.profile.role == Profile.MANAGER:
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\utils\functional.py", line 247, in inner
+    return func(self._wrapped, *args)
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\db\models\fields\related_descriptors.py", line 424, in __get__
+    self.related.get_accessor_name()
+django.contrib.auth.models.User.profile.RelatedObjectDoesNotExist: User has no profile.
+[20/Nov/2021 18:46:33] ERROR [django.request:230] Internal Server Error: /manager/
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\user\PycharmProjects\Industry_Academy\manager\views.py", line 18, in show_manager
+    if request.user.profile.role == Profile.MANAGER:
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\utils\functional.py", line 247, in inner
+    return func(self._wrapped, *args)
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\db\models\fields\related_descriptors.py", line 424, in __get__
+    self.related.get_accessor_name()
+django.contrib.auth.models.User.profile.RelatedObjectDoesNotExist: User has no profile.
+[20/Nov/2021 18:46:44] WARNING [django.request:230] Not Found: /listCompany
+[20/Nov/2021 18:47:35] WARNING [django.request:230] Not Found: /system
+[20/Nov/2021 18:47:42] WARNING [django.request:230] Not Found: /system/manager
+[20/Nov/2021 18:48:00] WARNING [django.request:230] Not Found: /system/manager/schedule
+[20/Nov/2021 21:05:13] WARNING [django.request:230] Not Found: /system/manager/createUser
+[20/Nov/2021 21:14:42] WARNING [django.request:230] Not Found: /post

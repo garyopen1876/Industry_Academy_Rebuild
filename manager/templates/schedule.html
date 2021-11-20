@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+{% block title %} 資工產媒-編訂排程  {% endblock %}
+{% block headmessage %}
+    <header>
+        <h2>助教編訂排程</h2>
+        <p>開放時段切換開關鈕.</p>
+    </header>
+{% endblock %}
+{% block content %}
+    <div class="box">
+        <form method="POST" action="#" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="row gtr-50 gtr-uniform">
+                    <div class="col-6 col-12-mobilep">
+                        <div class="table-wrapper">
+                            <table>
+                                <thead>
+                                <tr>
+                                    <th>學生時程</th>
+                                    <th style="width: 30%;">開關</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for unit in student_units %}
+                                    <tr>
+                                        <td>{{ unit.function }}</td>
+                                        {% if unit.switch == True %}
+                                            <td>
+                                                <button type="submit" class="button alt small icon fa-toggle-on" name="{{ unit.function }}">ON</button>
+                                            </td>
+                                        {% else %}
+                                            <td>
+                                                <button type="submit" class="button special small icon fa-toggle-off" name="{{ unit.function }}">OFF</button>
+                                            </td>
+                                        {% endif %}
+                                     </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="col-6 col-12-mobilep">
+                        <div class="table-wrapper">
+                            <table>
+                                <thead>
+                                <tr>
+                                    <th>公司時程</th>
+                                    <th style="width: 30%">開關</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for unit in company_units %}
+                                    <tr>
+                                        <td>{{ unit.function }}</td>
+                                        {% if unit.switch == True %}
+                                            <td>
+                                                <button type="submit" class="button alt small icon fa-toggle-on" name="{{ unit.function }}">ON</button>
+                                            </td>
+                                        {% else %}
+                                            <td>
+                                                <button type="submit" class="button special small icon fa-toggle-off" name="{{ unit.function }}">OFF</button>
+                                            </td>
+                                        {% endif %}
+                                    </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                <br/>
+                <div class="col-10 col-12-mobilep">
+                </div>
+                <div class=" col-2 col-12-mobilep">
+                    <ul class="actions special">
+                        <li><a href="/system/manager" class="button alt small icon fa-reply">上一頁</a></li>
+                    </ul>
+                </div>
+            </div>
+        </form>
+    </div>
+{% endblock %}

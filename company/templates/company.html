@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% block title %} 資工產媒-媒合系統  {% endblock %}
+{% block headmessage %}
+    <header>
+        <h2>歡迎使用!</h2>
+        <p>企業平台</p>
+    </header>
+{% endblock %}
+{% block content %}
+   <section class="box special features">
+        <div class="features-row">
+            <section>
+                <span class="icon major fa-building accent3"></span>
+                {% if check_user.exists %}
+                    <h3><a href="/system/company/companyInformation">企業資訊</a></h3>
+                {% else %}
+                    <h3><a href="/system/company/companyEdit">編輯企業資訊</a></h3>
+                {% endif %}
+                <p>企業公司的相關資料</p>
+            </section>
+            <section>
+                <span class="icon major fa-file accent4"></span>
+                <h3><a href="/system/company/companyUpload">新增職位資訊</a></h3>
+                <p>填寫所需的職位名稱、條件和名額</p>
+            </section>
+        </div>
+        <div class="features-row">
+            <section>
+                <span class="icon major fa-arrow-circle-up accent2"></span>
+                <h3><a href="/system/match/companyResume">履歷審察</a></h3>
+                <p>觀看學生們的履歷</p>
+            </section>
+            <section>
+                <span class="icon major fa-edit accent4"></span>
+                <h3><a href="/system/match/companyAdmission">正備取結果</a></h3>
+                <p>填寫學生們的正備取與職位</p>
+            </section>
+        </div>
+        <div class="features-row">
+            <br>
+            <br>
+            <span class="icon major fa-book accent5"></span>
+            <h3><a href="/system/match/companyResult">放榜結果</a></h3>
+            <p>媒合錄取結果</p>
+        </div>
+    </section>
+{% endblock %}

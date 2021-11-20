@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+{% block title %} 資工產媒-企業資料 {% endblock %}
+{% block headmessage %}
+    <header>
+        <h2>企業資訊</h2>
+        <p>企業公司相關資料.</p>
+    </header>
+{% endblock %}
+{% block content %}
+    <div class="box">
+        <div class="row gtr-50 gtr-uniform">
+            <div class="col-12">
+                <table>
+                    <thead>
+                        <h3 style="color: #79aec8">企業基本資料</h3>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="width: 50%"><b style="color: #e4886a">公司名稱</b>：&emsp;{{ unit.name }}</td>
+                        </tr>
+                        <tr>
+                            <td><b style="color: #e4886a">產業別</b>：&emsp;{{ unit.industry }}</td>
+                            <td><b style="color: #e4886a">統一編號</b>：&emsp;{{ unit.uniform_numbers }}</td>
+                        </tr>
+                        <tr>
+                            <td><b style="color: #e4886a">資本額</b>：&emsp;{{ unit.capital }}</td>
+                            <td><b style="color: #e4886a">員工數</b>：&emsp;{{ unit.employee }}</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><b style="color: #e4886a">公司網站</b>：&emsp;{{ unit.website }}</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><b style="color: #e4886a">通訊地址</b>：&emsp;{{ unit.address }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table>
+                    <thead>
+                        <h3 style="color: #79aec8">企業提供的實習資料</h3>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="width: 50%"><b style="color: #e4886a">是否接受外籍生實習</b>：&emsp;{{ unit.foreign }}</td>
+                            <td style="width: 50%;"><b style="color: #e4886a">實習總名額</b>：&emsp;{{ unit.vacancy }}</td>
+                        </tr>
+                        <tr>
+                            <td><b style="color: #e4886a">實習期間</b>：&emsp;{{ unit.inter_ship_start }} ～ {{ unit.inter_ship_end }}</td>
+                            <td><b style="color: #e4886a">工作時間</b>：&emsp;{{ unit.work_time }}</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <b style="color: #e4886a">實習地點地址</b>：<br/>
+                                {{ unit.work_place|linebreaksbr }}
+                            </td>
+                            <td><b style="color: #e4886a">薪資</b>：&emsp;{{ unit.salary }}</td>
+                        </tr>
+                        <tr>
+                            <td><b style="color: #e4886a">其他福利</b>：&emsp;{{ unit.welfare }}</td>
+                            <td><b style="color: #e4886a">面試方式</b>：&emsp;{{ unit.interview }}</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><b style="color: #e4886a">實習簡章</b>：
+                                {% if unit.introduction != "" %}
+                                    <a href="/media/{{ unit.introduction }}" target="_blank" style="color: forestgreen">瀏覽簡章</a>
+                                {% else %}
+                                    <font>尚未上傳簡章！</font>
+                                {% endif %}
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-12">
+                <ul class="actions special">
+                    <li><a href="/system/company/companyEdit" class="button special">編輯資料</a></li>
+                    <li><a href="/system/changePassword" class="button special">修改密碼</a></li>
+                </ul>
+            </div>
+            <div class=" col-10 col-12-mobilep">
+            </div>
+            <div class=" col-2 col-12-mobilep">
+                <ul class="actions special">
+                    <li><a href="/system/company" class="button alt small icon fa-reply">上一頁</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -40,6 +40,19 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'web',
+    #'student',
+    'company',
+    #'manager',
+    #'inter_ship',
+    #'tutor',
+    #'match',
+    #'line',
+    #'auto_mail',
+    #'django_q',
+    #'easy_thumbnails',
+    #'image_cropping',
+    #'message_board',
+    #'postman',
 ]
 
 MIDDLEWARE = [

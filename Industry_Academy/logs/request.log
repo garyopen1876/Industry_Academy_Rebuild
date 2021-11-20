@@ -283,3 +283,23 @@ tz
 [20/Nov/2021 11:21:53] WARNING [django.request:230] Not Found: /listCompany
 [20/Nov/2021 11:22:35] WARNING [django.request:230] Not Found: /system
 [20/Nov/2021 11:26:28] WARNING [django.request:230] Not Found: /listCompany
+[20/Nov/2021 18:24:41] WARNING [django.request:230] Not Found: /favicon.ico
+[20/Nov/2021 18:24:42] WARNING [django.request:230] Not Found: /listCompany
+[20/Nov/2021 18:24:47] WARNING [django.request:230] Not Found: /report
+[20/Nov/2021 18:24:49] WARNING [django.request:230] Not Found: /system
+[20/Nov/2021 18:24:51] WARNING [django.request:230] Not Found: /post
+[20/Nov/2021 18:27:53] WARNING [django.request:230] Not Found: /system
+[20/Nov/2021 18:28:08] WARNING [django.request:230] Not Found: /system/company/companyEdit
+[20/Nov/2021 18:28:11] ERROR [django.request:230] Internal Server Error: /company/companyEdit/
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\user\PycharmProjects\Industry_Academy\company\views.py", line 46, in company_edit
+    if request.user.profile.role == Profile.COMPANY:
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\utils\functional.py", line 247, in inner
+    return func(self._wrapped, *args)
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\db\models\fields\related_descriptors.py", line 424, in __get__
+    self.related.get_accessor_name()
+django.contrib.auth.models.User.profile.RelatedObjectDoesNotExist: User has no profile.

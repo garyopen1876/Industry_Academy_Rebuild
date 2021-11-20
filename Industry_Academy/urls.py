@@ -25,5 +25,21 @@ urlpatterns = [
     path('logout/', web.logout, name='logout'),
     path('change_password/', web.change_password, name='change_password'),
 
+    #path('personal_index/', web.personal_index, name='personal_index'),
+
+    #path('news/list/', web.news_list, name='news_list'),
+    #path('news/detail/<int:message_id>/', web.news_detail, name='news_detail'),
+
+    #path('student/', include('student.urls')),
+    path('company/', include('company.urls')),
+    #path('manager/', include('manager.urls')),
+    #path('tutor/', include('tutor.urls')),
+    #path('match/', include('match.urls')),
+    #path('inter_ship/', include('inter_ship.urls')),
+    #path('message_board/', include('message_board.urls')),
+
+
+    #path('accounts/NID/login/callback/', web.nid_callback),
+
 
 ]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

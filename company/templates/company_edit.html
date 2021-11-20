@@ -1,0 +1,139 @@
+{% extends 'base.html' %}
+{% block title %} 資工產媒-企業資料 {% endblock %}
+{% block headmessage %}
+    <header>
+        <h2>編輯企業資訊</h2>
+        <p>企業相關資料.</p>
+    </header>
+{% endblock %}
+{% block content %}
+    <div class="box">
+        <form method="POST" action="#" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="row gtr-50 gtr-uniform">
+                <div class="col-12">
+                    {% if message %}
+                        <div class="alert alert-warning" style="color: red">{{message}}</div>
+                    {% endif %}
+                </div>
+                <div class="col-12">
+                    <h3 style="color: #79aec8">企業基本資料</h3>
+                </div>
+                <div class="col-12">
+                    <h4>公司名稱 *</h4>
+                    <input type="text" name="name" id="name" value="{{ unit.name }}" maxlength="30" required/>
+                </div>
+                <div class="col-6 col-12-mobilep">
+                    <h4>產業別 *</h4>
+                    <select name="industry" required>
+                        <option value="{{ unit.industry }}">{{ unit.industry }}</option>
+                        <option value="農、林、漁、牧業">農、林、漁、牧業</option>
+                        <option value="礦業及土石採取業">礦業及土石採取業</option>
+                        <option value="製造業">製造業</option>
+                        <option value="電力及燃氣供應業">電力及燃氣供應業</option>
+                        <option value="用水供應及污染整治業">用水供應及污染整治業</option>
+                        <option value="營建工程業">營建工程業</option>
+                        <option value="批發及零售業">批發及零售業</option>
+                        <option value="運輸及倉儲業">運輸及倉儲業</option>
+                        <option value="住宿及餐飲業">住宿及餐飲業</option>
+                        <option value="出版、影音製作、傳播及資通訊服務業">出版、影音製作、傳播及資通訊服務業</option>
+                        <option value="金融及保險業">金融及保險業</option>
+                        <option value="不動產業">不動產業</option>
+                        <option value="專業、科學及技術服務業">專業、科學及技術服務業</option>
+                        <option value="支援服務業">支援服務業</option>
+                        <option value="公共行政及國防、強制性社會安全 公共行政業">公共行政及國防、強制性社會安全 公共行政業</option>
+                        <option value="教育業">教育業</option>
+                        <option value="醫療保健及社會工作服務業">醫療保健及社會工作服務業</option>
+                        <option value="藝術、娛樂及休閒服務業">藝術、娛樂及休閒服務業</option>
+                        <option value="其他服務業">其他服務業</option>
+                    </select>
+                </div>
+                <div class="col-6 col-12-mobilep">
+                    <h4>統一編號 *</h4>
+                    <input type="text" name="uniformNumbers" id="uniformNumbers" value="{{ unit.uniform_numbers }}" maxlength="20" required/>
+                </div>
+                <div class="col-6 col-12-mobilep">
+                    <h4>資本額 *</h4>
+                    <input type="text" name="capital" id="capital" value="{{ unit.capital }}" maxlength="50" required/>
+                </div>
+                <div class="col-6 col-12-mobilep">
+                    <h4>員工數 *</h4>
+                    <input type="number" min="0" name="employee" id="employee" value="{{ unit.employee }}"required/>
+                </div>
+                <div class="col-12">
+                    <h4>公司網站 *</h4>
+                    <input type="text" name="website" id="website" value="{{ unit.website }}" maxlength="100" required/>
+                </div>
+                <div class="col-12">
+                    <h4>通訊地址 *</h4>
+                    <input type="text" name="address" id="address" value="{{ unit.address }}" maxlength="100" required/>
+                </div>
+                <div class="col-12">
+                    <h3 style="color: #79aec8">企業提供的實習資料</h3>
+                </div>
+                <div class="col-6 col-12-mobilep">
+                    <h4>是否接受外籍生實習 *</h4>
+                    <select style="width: 30%" name="foreign" required>
+                        <option value="{{ unit.foreign }}">{{ unit.foreign }}</option>
+                        <option value="是">是</option>
+                        <option value="否">否</option>
+                    </select>
+                </div>
+                <div class="col-6 col-12-mobilep">
+                    <h4>實習期間 * ﹝西元年/月/日﹞</h4>
+                    <div class="row gtr-50 gtr-uniform">
+                        <div class="col-4 col-12-mobilep">
+                            <input type="text" name="start" id="start" value="{{ unit.inter_ship_start }}" maxlength="15" required/>
+                        </div>
+                        <p>～</p>
+                        <div class="col-4 col-12-mobilep">
+                            <input type="text" name="end" id="end" value="{{ unit.inter_ship_end }}" maxlength="15" required/>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-12-mobilep">
+                    <h4>工作時間 *</h4>
+                    <input type="text" name="workTime" id="workTime" value="{{ unit.work_time }}" maxlength="30" required/>
+                </div>
+                <div class="col-6 col-12-mobilep">
+                    <h4>實習地點地址 *</h4>
+                    <textarea name="workPlace" id="workPlace"  rows="6">{{ unit.work_place|linebreaksbr }}</textarea>
+                </div>
+                <div class="col-6 col-12-mobilep">
+                    <h4>薪資 *</h4>
+                    <input type="text" name="salary" id="salary" value="{{ unit.salary }}" required/>
+                </div>
+                <div class="col-6 col-12-mobilep">
+                    <h4>其他福利 *</h4>
+                    <input type="text" name="welfare" id="welfare" value="{{ unit.welfare }}" maxlength="20" required/>
+                </div>
+                <div class="col-6 col-12-mobilep">
+                    <h4>面試方式 *</h4>
+                    <select style="width: 80%" name="interview" required>
+                        <option value="{{ unit.interview }}">{{ unit.interview }}</option>
+                        <option value="參加廠商聯合面試">參加廠商聯合面試</option>
+                        <option value="參加自行面試">參加自行面試</option>
+                        <option value="本次不參加，下次再通知實習機會">本次不參加，下次再通知實習機會</option>
+                    </select>
+                </div>
+                <div class="col-12">
+                    <h4>實習簡章 </h4>
+                    <input type="file" name="introduction"/>﹝上傳格式為 pdf 檔﹞
+                </div>
+                <div class="col-12">
+                    <ul class="actions special">
+                        <li><input type="submit" value="送出" /></li>
+                        <li><input type="reset" value="清除重填" /></li>
+                    </ul>
+                </div>
+                <div class=" col-10 col-12-mobilep">
+                </div>
+                <div class=" col-2 col-12-mobilep">
+                    <ul class="actions special">
+                        <li><a href="/system/company/companyInformation" class="button alt small icon fa-reply">上一頁</a></li>
+                    </ul>
+                </div>
+            </div>
+        </form>
+    </div>
+{% endblock %}

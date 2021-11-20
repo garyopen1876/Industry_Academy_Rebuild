@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% block title %} 資工產媒-新增職位內容 {% endblock %}
+{% block headmessage %}
+    <header>
+        <h2>企業新增職位內容</h2>
+        <p>新增職位名稱與詳細內容及名額.</p>
+    </header>
+{% endblock %}
+{% block content %}
+    <div class="box">
+        <form method="POST" action="">
+            {% csrf_token %}
+            <div class="row gtr-50 gtr-uniform">
+                <div class="col-12">
+                    <p>職位名稱：</p>
+                </div>
+                <div class="col-12">
+                    <input type="text" name="vacancyName" id="vacancyName" value="" placeholder="請輸入" maxlength="20" required/>
+                </div>
+                <div class="col-12">
+                    <p>所需專長：</p>
+                </div>
+                <div class="col-12">
+                    <textarea name="vacancyRequiredSkill" id="vacancyRequiredSkill" placeholder="請輸入" rows="8" required></textarea>
+                </div>
+                <div class="col-12">
+                    <p>職位條件內容：</p>
+                </div>
+                <div class="col-12">
+                    <textarea name="vacancyContent" id="vacancyContent" placeholder="請輸入" rows="8" required></textarea>
+                </div>
+                <div class="col-12">
+                    <p>職位名額：</p>
+                </div>
+                <div class="col-12">
+                    <input type="number" name="vacancyNumber" id="vacancyNumber" value="" placeholder="請輸入" required/>
+                </div>
+                <div class="col-12">
+                    <ul class="actions special">
+                        <li><input type="submit" value="新增" /></li>
+                    </ul>
+                </div>
+                <div class="col-10 col-12-mobilep">
+                </div>
+                <div class=" col-2 col-12-mobilep">
+                    <ul class="actions special">
+                        <li><a href="/system/company/companyUpload" class="button alt small icon fa-reply">上一頁</a></li>
+                    </ul>
+                </div>
+            </div>
+        </form>
+    </div>
+{% endblock %}

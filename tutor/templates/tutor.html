@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block title %} 資工產媒-系統功能  {% endblock %}
+{% block headmessage %}
+    <header>
+        <h2>歡迎使用!</h2>
+        <p>導師平台</p>
+    </header>
+{% endblock %}
+{% block content %}
+   <section class="box special features">
+        <div class="features-row">
+            <section>
+                <span class="icon major fa-id-card accent4"></span>
+                {% if check_user.exists %}
+                    <h3><a href="/system/tutor/tutorInformation">導師資訊</a></h3>
+                {% else %}
+                    <h3><a href="/system/tutor/tutorEdit">編輯導師資訊</a></h3>
+                {% endif %}
+                <p>導師的相關資料</p>
+            </section>
+            <section>
+                <span class="icon major fa-file accent4"></span>
+                <h3><a href="/report">實習報告評量</a></h3>
+                <p>評量學生們的實習報告</p>
+            </section>
+        </div>
+    </section>
+{% endblock %}

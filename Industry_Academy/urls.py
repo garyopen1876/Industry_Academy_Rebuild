@@ -33,7 +33,7 @@ urlpatterns = [
     #path('student/', include('student.urls')),
     path('company/', include('company.urls')),
     path('manager/', include('manager.urls')),
-    #path('tutor/', include('tutor.urls')),
+    path('tutor/', include('tutor.urls')),
     #path('match/', include('match.urls')),
     #path('inter_ship/', include('inter_ship.urls')),
     #path('message_board/', include('message_board.urls')),

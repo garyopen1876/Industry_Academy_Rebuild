@@ -44,7 +44,7 @@ INSTALLED_APPS = [
     'company',
     'manager',
     #'inter_ship',
-    #'tutor',
+    'tutor',
     #'match',
     #'line',
     #'auto_mail',

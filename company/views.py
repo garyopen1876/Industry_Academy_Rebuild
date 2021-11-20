@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from .models import *
-# from manager.models import Function
+from manager.models import Function
 from web.models import Profile
 
 

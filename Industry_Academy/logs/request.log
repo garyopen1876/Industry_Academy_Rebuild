@@ -349,3 +349,5 @@ django.contrib.auth.models.User.profile.RelatedObjectDoesNotExist: User has no p
 [20/Nov/2021 18:48:00] WARNING [django.request:230] Not Found: /system/manager/schedule
 [20/Nov/2021 21:05:13] WARNING [django.request:230] Not Found: /system/manager/createUser
 [20/Nov/2021 21:14:42] WARNING [django.request:230] Not Found: /post
+[20/Nov/2021 22:09:17] WARNING [django.request:230] Not Found: /system
+[20/Nov/2021 22:09:29] WARNING [django.request:230] Not Found: /post

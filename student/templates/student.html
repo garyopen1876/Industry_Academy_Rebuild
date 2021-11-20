@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block title %} 資工產媒-媒合系統  {% endblock %}
+{% block headmessage %}
+    <header>
+        <h2>歡迎使用!</h2>
+        <p>學生平台.</p>
+    </header>
+{% endblock %}
+{% block content %}
+   <section class="box special features">
+        <div class="features-row">
+            <section>
+                <span class="icon major fa-id-card accent4"></span>
+                {% if check_user.exists %}
+                    <h3><a href="/system/student/studentInformation">個人資訊</a></h3>
+                {% else %}
+                    <h3><a href="/system/student/studentEdit">編輯個人資訊</a></h3>
+                {% endif %}
+                <p>學生相關資料</p>
+            </section>
+            <section>
+                <span class="icon major fa-file accent3"></span>
+                <h3><a href="/system/match/studentUpload">履歷與投遞公司</a></h3>
+                <p>上傳履歷檔案及投履的企業公司</p>
+            </section>
+        </div>
+        <div class="features-row">
+            <section>
+                <span class="icon major fa-sort-numeric-asc accent2"></span>
+                <h3><a href="/system/match/studentSortInformation">履歷審核狀態及填寫企業公司志願排序</a></h3>
+                <p>履歷審合的狀態及填寫企業公司志願排序</p>
+            </section>
+            <section>
+                <span class="icon major fa-book accent5"></span>
+                <h3><a href="/system/match/studentResult">放榜結果</a></h3>
+                <p>媒合錄取結果</p>
+            </section>
+        </div>
+    </section>
+{% endblock %}

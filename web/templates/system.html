@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block title %} 資工產媒-媒合系統登入  {% endblock %}
+{% block headmessage %}
+    <header>
+        <h2>媒合系統</h2>
+        <p>請輸入帳號與密碼.</p>
+    </header>
+{% endblock %}
+{% block content %}
+    <section class="box special features">
+            <div class="features-row">
+                <section>
+                    <span align='center' class="icon major fa-user accent4"></span>
+                    <h3  style="color: #FF5733"><a href="{{ nid_login_url }}">學生登入</a></h3>
+                    <p>上傳資料、選填志願、志願公布</p>
+                </section>
+                <section>
+                    <span class="icon major fa-building accent3"></span>
+                    <h3>企業公司</h3>
+                    <p>上傳資訊、查看履歷、選擇人才</p>
+                    <form action="" method="POST">
+                    {% csrf_token %}
+                    {% if message %}
+                        <div class="alert alert-warning" style="color: red">{{message}}</div>
+                    {% endif %}
+                    <div class="row gtr-50 gtr-uniform">
+                        <div class="col-12">
+                            <input type="text" name="userID" id="userID" value="" placeholder="帳號" />
+                        </div>
+                        <div class="col-12">
+                            <input type="password" name="password" id="password" value="" placeholder="密碼" autocomplete=off/>
+                        </div>
+                        <div class="col-12">
+                            <ul class="actions special">
+                                <li><input type="submit" value="登入" /></li>
+                            </ul>
+                        </div>
+                    </div>
+                    </form>
+                </section>
+            </div>
+    </section>
+{% endblock %}

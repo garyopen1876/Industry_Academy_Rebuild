@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block title %} 資工產媒-聯絡資訊 {% endblock %}
+{% block headmessage %}
+    <header>
+        <h2>聯絡我們</h2>
+        <p>告訴我們你的疑慮或建議.</p>
+    </header>
+{% endblock %}
+{% block content %}
+    <div class="box">
+        <form method="post" action="">
+            {% csrf_token %}
+            <div class="row gtr-50 gtr-uniform">
+                <div class="col-6 col-12-mobilep">
+                    <input type="text" name="name" id="name" value="" placeholder="Name" />
+                </div>
+                <div class="col-6 col-12-mobilep">
+                    <input type="email" name="from_email" id="from_email" value="" placeholder="Email" />
+                </div>
+                <div class="col-12">
+                    <input type="text" name="subject" id="subject" value="" placeholder="Subject" />
+                </div>
+                <div class="col-12">
+                    <textarea name="message" id="message" placeholder="Enter your message" rows="6"></textarea>
+                </div>
+                <div class="col-12">
+                    <ul class="actions special">
+                        <li><input type="submit" value="送出" /></li>
+                        <li><input type="reset" value="清除重填" /></li>
+                    </ul>
+                </div>
+            </div>
+        </form>
+    </div>
+{% endblock %}

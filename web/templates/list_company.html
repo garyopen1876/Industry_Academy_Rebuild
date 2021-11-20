@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block title %} 資工產媒-合作廠商 {% endblock %}
+{% block headmessage %}
+    <header>
+        <h2>合作廠商</h2>
+        <p>目前合作的企業公司列表.</p>
+    </header>
+{% endblock %}
+{% block content %}
+    <div class="row">
+        <div class="col-12">
+            <section class="box">
+                <div class="table-wrapper">
+                    <table>
+                       <thead>
+                       <tr>
+                           <th>合作廠商</th>
+                       </tr>
+                       </thead>
+                        <tbody>
+                            {% for unit in company_ob %}
+                                <tr>
+                                    <td><a href="/listCompany/listCompanyDetail/{{ unit.id }}">{{ unit.name }}</a></td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                        <tfoot>
+                        </tfoot>
+                    </table>
+                </div>
+            </section>
+        </div>
+    </div>
+{% endblock %}

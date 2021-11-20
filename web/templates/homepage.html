@@ -1,0 +1,48 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <title> 資工產媒-首頁 </title>
+    <!-- html5up-alpha -->
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/jquery.dropotron.min.js' %}"></script>
+    <script src="{% static 'js/jquery.scrollex.min.js' %}"></script>
+    <script src="{% static 'js/browser.min.js' %}"></script>
+    <script src="{% static 'js/breakpoints.min.js' %}"></script>
+    <script src="{% static 'js/util.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+</head>
+<body class="landing is-preload">
+    <div id="page-wrapper">
+        <!-- 導覽列 -->
+        <header id="header" class="alt">
+            <h1>逢甲資工產學實習管理系統</h1>
+            <nav id="nav">
+                <ul>
+                    <li><a href="/">Home</a> // </li>
+                    <li><a href="/post">公佈欄</a> // </li>
+                    <li><a href="/system">媒合系統</a> // </li>
+                    <li><a href="/report">實習報告</a></li>
+                    {% if request.user.is_authenticated %}
+                        <li><a href="/logout" class="button">登出</a></li>
+                    {% else %}
+                        <li><a href="/system" class="button">登入</a></li>
+                    {% endif %}
+                </ul>
+            </nav>
+        </header>
+        <!-- Banner -->
+        <section id="banner">
+            <h2>產學實習管理系統</h2>
+            <p>需要產業實習經驗的學生與找尋人才的企業公司的媒合平台</p>
+            <ul class="actions special">
+                <li><a href="/listCompany" class="button primary" style="border: double; border-color: gray; border-width: 6px">合作廠商</a></li>
+            </ul>
+        </section>
+        <!-- Footer -->
+        {% include 'footer.html' %}
+    </div>
+</body>
+</html>

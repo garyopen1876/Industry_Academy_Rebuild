@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block title %} 資工產媒-公佈欄 {% endblock %}
+{% block headmessage %}
+    <header>
+        <h2>公佈欄</h2>
+        <p>相關資訊與時程.</p>
+    </header>
+{% endblock %}
+{% block content %}
+    <div class="row">
+        <div class="col-12">
+            <section class="box">
+                <div class="table-wrapper">
+                    <table>
+                       <thead>
+                       <tr>
+                           <th>標題</th>
+                           <th width="20%">發布日期</th>
+                       </tr>
+                       </thead>
+                        <tbody>
+                            {% for unit in message_units %}
+                                <tr>
+                                    <td><a href="/post/detail/{{ unit.id }}">{{ unit.title }}</a></td>
+                                    <td>{{ unit.created }}</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                        <tfoot>
+                        </tfoot>
+                    </table>
+                </div>
+            </section>
+        </div>
+    </div>
+{% endblock %}

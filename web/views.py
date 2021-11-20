@@ -17,30 +17,30 @@ def index(request):
 
 
 # 公佈欄
-def show_post(request):
+def news_list(request):
     message_units = Message.objects.filter().order_by('-created')
     return render(request, "post.html", locals())
 
 
 # 公佈欄 詳細訊息
-def show_detail(request, detail_id=None):
+def news_detail(request, detail_id=None):
     unit = Message.objects.get(id=detail_id)
     return render(request, 'detail.html', locals())
 
 
 # 媒合系統登入
-def system(request):
+def personal_index(request):
     nid_login_url = 'https://opendata.fcu.edu.tw/fcuOauth/Auth.aspx?client_id=' + NID_CLIENT_ID + \
                     '&client_url=' + request.scheme + '://' + request.get_host() + '/accounts/NID/login/callback/'
     if request.user.is_authenticated:  # 如果有登入，不需重複登入
         if request.user.profile.role == Profile.STUDENT:
-            return redirect('/system/student')
+            return redirect('/student')
         elif request.user.profile.role == Profile.COMPANY:
-            return redirect('/system/company')
+            return redirect('/company')
         elif request.user.profile.role == Profile.MANAGER:
-            return redirect('/system/manager')
+            return redirect('/manager')
         elif request.user.profile.role in (Profile.UNIVERSITY_TUTOR, Profile.COMPANY_TUTOR1, Profile.COMPANY_TUTOR2):
-            return redirect('/system/tutor')
+            return redirect('/tutor')
         else:
             message = '身分錯誤！請先登出切換身分！'
 
@@ -53,19 +53,19 @@ def system(request):
                 if user.profile.role == Profile.STUDENT:
                     auth.login(request, user)
                     message = '登入成功！'
-                    return redirect('/system/student')
+                    return redirect('/student')
                 elif user.profile.role == Profile.COMPANY:
                     auth.login(request, user)
                     message = '登入成功！'
-                    return redirect('/system/company')
+                    return redirect('/company')
                 elif user.profile.role == Profile.MANAGER:
                     auth.login(request, user)
                     message = '登入成功！'
-                    return redirect('/system/manager')
+                    return redirect('/manager')
                 elif user.profile.role in (Profile.UNIVERSITY_TUTOR, Profile.COMPANY_TUTOR1, Profile.COMPANY_TUTOR2):
                     auth.login(request, user)
                     message = '登入成功！'
-                    return redirect('/system/tutor')
+                    return redirect('/tutor')
                 else:
                     message = '登入身分錯誤！'
             else:

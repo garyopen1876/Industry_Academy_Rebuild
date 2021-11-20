@@ -18,17 +18,17 @@
     <div id="page-wrapper">
         <!-- 導覽列 -->
         <header id="header" class="alt">
-            <h1>逢甲資工產學實習管理系統</h1>
+            <h1>逢甲資工產學管理系統</h1>
             <nav id="nav">
                 <ul>
                     <li><a href="/">Home</a> // </li>
-                    <li><a href="/post">公佈欄</a> // </li>
-                    <li><a href="/system">媒合系統</a> // </li>
+                    <li><a href="/news/list">公佈欄</a> // </li>
+                    <li><a href="/personal_index">媒合系統</a> // </li>
                     <li><a href="/report">實習報告</a></li>
                     {% if request.user.is_authenticated %}
                         <li><a href="/logout" class="button">登出</a></li>
                     {% else %}
-                        <li><a href="/system" class="button">登入</a></li>
+                        <li><a href="/personal_index" class="button">登入</a></li>
                     {% endif %}
                 </ul>
             </nav>

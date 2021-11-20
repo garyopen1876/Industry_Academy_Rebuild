@@ -25,10 +25,10 @@ urlpatterns = [
     path('logout/', web.logout, name='logout'),
     path('change_password/', web.change_password, name='change_password'),
 
-    #path('personal_index/', web.personal_index, name='personal_index'),
+    path('personal_index/', web.personal_index, name='personal_index'),
 
-    #path('news/list/', web.news_list, name='news_list'),
-    #path('news/detail/<int:message_id>/', web.news_detail, name='news_detail'),
+    path('news/list/', web.news_list, name='news_list'),
+    path('news/detail/<int:message_id>/', web.news_detail, name='news_detail'),
 
     path('student/', include('student.urls')),
     path('company/', include('company.urls')),

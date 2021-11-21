@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block title %} 資工產媒-企業導師回饋 {% endblock %}
+{% block headmessage %}
+    <header>
+        <h2>企業導師回饋</h2>
+        <p>{{ unit.student.name }}[{{ unit.title }}]的回饋建議.</p>
+    </header>
+{% endblock %}
+{% block content %}
+    <div class="box">
+        <form method="POST" action="#" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="row gtr-50 gtr-uniform">
+                {% if request.user.profile.role == 5 %}
+                    <div class="col-12">
+                        <textarea name="company_tutor_feedback" id="company_tutor_feedback" rows="8">{{ unit.company_tutor_feedback }}</textarea>
+                    </div>
+                    <div class="col-12">
+                        <ul class="actions special">
+                            <li><input type="submit" value="送出" /></li>
+                            <li><input type="reset" value="清除重填" /></li>
+                        </ul>
+                    </div>
+                {% else %}
+                     <div class="col-12">
+                        <h4>企業導師對於報告的回饋建議：</h4>
+                        <hr/>
+                        <font style="color: #79aec8">{{ unit.company_tutor_feedback|linebreaks }}</font>
+                     </div>
+                {% endif %}
+            </div>
+        </form>
+    </div>
+{% endblock %}

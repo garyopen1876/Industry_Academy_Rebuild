@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+{% block title %} 資工產媒-{{ inter_ship.student.name }}報告評量 {% endblock %}
+{% block headmessage %}
+    <header>
+        <h2>{{ inter_ship.student.name }}報告評量</h2>
+        <p>{{ inter_ship.student.name }}的實習報告.</p>
+    </header>
+{% endblock %}
+{% block content %}
+    <div class="row">
+        <div class="col-12">
+            <div class="col-12">
+                {% if message %}
+                    <div class="alert alert-warning" style="color: red">{{message}}</div>
+                {% endif %}
+            </div>
+            <section class="box">
+                <div class="table-wrapper">
+                    <table>
+                       <thead>
+                       <tr>
+                           <th>實習報告列表</th>
+                           <th>截止日期</th>
+                           <th>報告內容</th>
+                           <th>企業導師回饋</th>
+                           {% if request.user.profile.role == 4 %}
+                                <th>大學導師回饋</th>
+                           {% endif %}
+                       </tr>
+                       </thead>
+                        <tbody>
+                            {% for unit in show_report %}
+                                <tr>
+                                    <td>{{ unit.title }}</td>
+                                    <td>{{ unit.deadline}}</td>
+                                    {% if  unit.report != '' and unit.delay_upload == False %}
+                                        <td><a href="/media/{{ unit.report }}" target="_blank" style="color: forestgreen">瀏覽報告</a></td>
+                                    {% elif  unit.report != '' and unit.delay_upload == True %}
+                                        <td><a href="/media/{{ unit.report }}" target="_blank" style="color: darkorange">瀏覽報告[補交]</a></td>
+                                    {% else %}
+                                        <td style="color: red">尚未繳交 !</td>
+                                    {% endif %}
+                                    {% if  unit.company_tutor_feedback_date != null %}
+                                        <td><a href="/report/companyTutor/feedback/{{ unit.id }}" target="_blank" style="color: forestgreen">
+                                        {% if request.user.profile.role == 5 or request.user.profile.role == 6 %}
+                                            已回饋</a></td>
+                                        {% else %}
+                                            觀看回饋</a></td>
+                                        {% endif %}
+                                    {% elif unit.report != '' %}
+                                        {% if request.user.profile.role == 5 or request.user.profile.role == 6 %}
+                                            <td><a href="/report/companyTutor/feedback/{{ unit.id }}" target="_blank" style="color: red">點擊回饋</a></td>
+                                        {% else %}
+                                            <td style="color: red">尚未回饋!</td>
+                                        {% endif %}
+                                    {% else %}
+                                        <td>等待繳交</td>
+                                    {% endif %}
+                                    {% if request.user.profile.role == 4 %}
+                                        {% if  unit.company_tutor_feedback_date != null %}
+                                            {% if unit.university_tutor_feedback_date != null %}
+                                                <td><a href="/report/universityTutor/feedback/{{ unit.id }}" target="_blank" style="color: forestgreen">已回饋</a></td>
+                                            {% else %}
+                                                <td><a href="/report/universityTutor/feedback/{{ unit.id }}" target="_blank" style="color: red">點擊回饋</a></td>
+                                            {% endif %}
+                                        {% elif  unit.report != '' %}
+                                            <td>等待回饋</td>
+                                        {% else %}
+                                            <td>等待繳交</td>
+                                        {% endif %}
+                                    {% endif %}
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                        <tfoot>
+                        </tfoot>
+                    </table>
+                </div>
+                <div class=" col-10 col-12-mobilep">
+                </div>
+                <div class=" col-2 col-12-mobilep">
+                    <ul class="actions special">
+                        <li><a href="/report/tutor" class="button alt small icon fa-reply">上一頁</a></li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+    </div>
+{% endblock %}

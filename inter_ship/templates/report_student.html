@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% block title %} 資工產媒-實習報告上傳 {% endblock %}
+{% block headmessage %}
+    <header>
+        <h2>實習報告上傳</h2>
+        <p>上傳實習報告.</p>
+    </header>
+{% endblock %}
+{% block content %}
+    <div class="box">
+        <form method="POST" action="#" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="row gtr-50 gtr-uniform">
+                <div class="col-12">
+                    {% if message %}
+                        <div class="alert alert-warning" style="color: red">{{message}}</div>
+                    {% endif %}
+                    <div style="border: double">
+                        <h5>1.請於每個月5號前繳交<a style="color: dodgerblue"href="/media/important/month_report(student).odt" target="_blank">月報告</a></h5>
+                        <h5>2.實習最後一個月請繳交<a style="color: dodgerblue"href="/media/important/final_report(student).doc" target="_blank">成果心得報告</a>以及
+                            <a style="color: dodgerblue"href="/media/important/evaluation_report(student).doc" target="_blank">實習成效評估表</a></h5>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <hr/>
+                </div>
+                {% for list in month_report %}
+                    <div class="col-6 col-12-mobilep">
+                         <h3 style="color: #79aec8">{{ list.title }}</h3>
+                    </div>
+                    <div class="col-6 col-12-mobilep">
+                        {% if list.report != '' and list.delay_upload == False %}
+                            <strong style="color: forestgreen">繳交狀態: 準時繳交!</strong>
+                            <a href="/media/{{ list.report }}" target="_blank">瀏覽報告</a>
+                        {% elif list.report != '' and list.delay_upload == True %}
+                            <strong style="color: darkorange">繳交狀態: 補交!</strong>
+                            <a href="/media/{{ list.report }}" target="_blank">瀏覽報告</a>
+                        {% else %}
+                            <strong style="color: red">繳交狀態: 尚未繳交 !</strong>
+                        {% endif %}
+                    </div>
+                    <div class="col-6 col-12-mobilep">
+                        <p> 截止日期:{{ list.deadline }}</p>
+                    </div>
+                    <div class="col-6 col-12-mobilep">
+                        <input type="file" name="report{{ list.id }}"/>﹝上傳格式為 pdf 檔﹞
+                    </div>
+                    <br>
+                    <div class="col-12">
+                        <ul class="actions special">
+                            <li><input type="submit" value="送出" name="report{{ list.id }}button"/></li>
+                        </ul>
+                    </div>
+                    <div class="col-12">
+                        <hr/>
+                    </div>
+                {% endfor %}
+            </div>
+        </form>
+    </div>
+{% endblock %}

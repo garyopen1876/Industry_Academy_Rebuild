@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block title %} 資工產媒-實習報告評量 {% endblock %}
+{% block headmessage %}
+    <header>
+        <h2>實習報告評量</h2>
+        <p>評量導生的實習報告.</p>
+    </header>
+{% endblock %}
+{% block content %}
+    <div class="row">
+        <div class="col-12">
+            <div class="col-12">
+                {% if message %}
+                    <div class="alert alert-warning" style="color: red">{{message}}</div>
+                {% endif %}
+            </div>
+            <section class="box">
+                <div class="table-wrapper">
+                    <table>
+                       <thead>
+                       <tr>
+                           <th>導生列表</th>
+                       </tr>
+                       </thead>
+                        <tbody>
+                            {% for unit in inter_ships %}
+                                <tr>
+                                    <td><a href="/report/detail/{{ unit.id }}">{{ unit.student.name }}</a></td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                        <tfoot>
+                        </tfoot>
+                    </table>
+                </div>
+            </section>
+        </div>
+    </div>
+{% endblock %}

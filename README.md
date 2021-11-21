@@ -5,10 +5,10 @@
   Day2 將舊有class一一上傳(依序)  
     company -- 公司相關功能  
     manager -- 管理者(學校助教)相關功能  
-    tutor -- 企業以及學校導師相關功能 
+    tutor -- 企業以及學校導師相關功能  
     student -- 學生相關功能  
     inter_ship -- 實習報告相關功能(預計增設功能)
-    match -- 媒合系統與其相關功能
+    match -- 媒合系統與其相關功能  
 
 # 常用指令
   建立migration資料檔   

@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block title %} 資工產媒-履歷回饋 {% endblock %}
+{% block headmessage %}
+    <header>
+        <h2>學生投履回饋</h2>
+        <p>企業公司對於學生的履歷給予的回饋建議.</p>
+    </header>
+{% endblock %}
+{% block content %}
+    <div class="box">
+        <div class="row gtr-50 gtr-uniform">
+            <div class="col-12">
+                <h4><font color="#e4886a">{{ unit.company.name }}</font>&emsp;對於履歷的回饋建議：</h4>
+                <hr/>
+                <font style="color: #79aec8">{{ unit.feedback|linebreaks }}</font>
+            </div>
+            <div class=" col-10 col-12-mobilep">
+            </div>
+            <div class=" col-2 col-12-mobilep">
+                <ul class="actions special">
+                    <li><a href="/system/match/studentSortInformation" class="button alt small icon fa-reply">上一頁</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+{% endblock %}

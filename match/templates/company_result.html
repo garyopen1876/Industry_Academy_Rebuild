@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% block title %} 資工產媒-放榜結果 {% endblock %}
+{% block headmessage %}
+    <header>
+        <h2>企業錄取員工名單</h2>
+        <p>將到報到貴公司的學生.</p>
+    </header>
+{% endblock %}
+{% block content %}
+    <div class="box">
+        <form method="POST" action="">
+            {% csrf_token %}
+                <div class="col-12">
+                    {% if message %}
+                        <div class="alert alert-warning" style="color: red">{{message}}</div>
+                    {% endif %}
+                </div>
+                <div class="col-12">
+                    <section class="box">
+                        <div class="table-wrapper">
+                            <table>
+                                <thead>
+                                <tr>
+                                    <th width="30%">錄取者</th>
+                                    <th>錄取職位</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                    {% for unit in show_result %}
+                                    <tr>
+                                        <td>{{ unit.student.name }}</td>
+                                        <td>
+                                            <input type="text" name="{{ unit.student.user.username }}" id="{{ unit.student.user.username }}" value="{{ unit.result_vacancy }} " maxlength="20"/>
+                                        </td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+                </div>
+                <div class="col-12">
+                    <ul class="actions special">
+                        <li><input type="submit" onclick="return(confirm('確認送出'))" value="送出" /></li>
+                        <li><input type="reset" value="清除重填" /></li>
+                    </ul>
+                </div>
+                <div class=" col-10 col-12-mobilep">
+                </div>
+                <div class=" col-2 col-12-mobilep">
+                    <ul class="actions special">
+                        <li><a href="/system/company" class="button alt small icon fa-reply">上一頁</a></li>
+                    </ul>
+                </div>
+            </div>
+        </form>
+    </div>
+{% endblock %}

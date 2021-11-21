@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% block title %} 資工產媒-審查履歷 {% endblock %}
+{% block headmessage %}
+    <header>
+        <h2>企業填寫履歷回饋</h2>
+        <p>選擇履歷審查結果並填寫建議或回饋.</p>
+    </header>
+{% endblock %}
+{% block content %}
+    <div class="box">
+        <form method="POST" action="#" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="row gtr-50 gtr-uniform">
+                <div class="col-12">
+                    {% if message %}
+                        <div class="alert alert-warning" style="color: red">{{message}}</div>
+                    {% endif %}
+                </div>
+                <div class="col-12">
+                    <p>學號：{{ student.user.username }}</p>
+                </div>
+                <div class="col-12">
+                    <p>學生姓名：{{ student.name }}</p>
+                </div>
+                <div class="col-12">
+                    <font>應徵職位：</font><font color="#79aec8">{{ unit.vacancy }}</font>
+                </div>
+                <div class="col-12">
+                    <p>審查履歷結果：</p>
+                    <input type="radio" id="1" name="review" value="已審閱，靜待通知" required>
+                        <label for="1">
+                            已審閱，靜待通知
+                        </label>
+                    <input type="radio" id="2" name="review" value="已審閱，很抱歉不符合本公司資格">
+                        <label for="2">
+                            已審閱，很抱歉不符合本公司資格
+                        </label>
+                    <input type="radio" id="3" name="review" value="已審閱，歡迎參加進一步面試">
+                        <label for="3">
+                            已審閱，歡迎參加進一步面試
+                        </label>
+                </div>
+                <div class="col-12">
+                    <p>回饋：</p>
+                </div>
+                <div class="col-12">
+                    <textarea name="feedback" id="feedback" rows="8">{{ unit.feedback }}</textarea>
+                </div>
+                <div class="col-12">
+                    <ul class="actions special">
+                        <li><input type="submit" value="送出" /></li>
+                        <li><input type="reset" value="清除重填" /></li>
+                    </ul>
+                </div>
+                <div class="col-10 col-12-mobilep">
+                </div>
+                <div class=" col-2 col-12-mobilep">
+                    <ul class="actions special">
+                        <li><a href="/system/match/companyAdmission" class="button alt small icon fa-reply">上一頁</a></li>
+                    </ul>
+                </div>
+            </div>
+        </form>
+    </div>
+{% endblock %}

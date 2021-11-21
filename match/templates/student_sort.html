@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% block title %} 資工產媒-填寫志願 {% endblock %}
+{% block headmessage %}
+    <header>
+        <h2>學生填寫志願序</h2>
+        <p>填寫心中公司的志願排序.</p>
+    </header>
+{% endblock %}
+{% block content %}
+    <div class="box">
+         <form method="POST" action="">
+            {% csrf_token %}
+            <div class="row gtr-50 gtr-uniform">
+                <div class="col-12">
+                    {% if message %}
+                        <div class="alert alert-warning" style="color: red">{{message}}</div>
+                    {% endif %}
+                    <div style="border: double">
+                        <h5>請按順序1、2、3...以此類推，填寫志願序，不想填者可為空</h5>
+                    </div>
+                </br>
+                </div>
+                <div class="col-12">
+                    <table>
+                        <thead>
+                        <tr>
+                            <th>企業公司</th>
+                            <th>志願序</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                            {% for tag in resume_ob.company.all%}
+                                <tr>
+                                    <td>{{ tag }}<td>
+                                    <input min="1" type="number" name="sort{{ tag }}" id="sort{{ tag }}" value="" placeholder="志願序(請填選數字)" />
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                        <tfoot>
+                        </tfoot>
+                    </table>
+                </div>
+                <br />
+                <div class="col-12">
+                    <ul class="actions special">
+                        <li><input type="submit" onclick="return(confirm('確認送出'))" value="送出" /></li>
+                        <li><input type="reset" value="清除重填" /></li>
+                    </ul>
+                </div>
+                <div class=" col-10 col-12-mobilep">
+                </div>
+                <div class=" col-2 col-12-mobilep">
+                    <ul class="actions special">
+                        <li><a href="/system/match/studentSortInformation" class="button alt small icon fa-reply">上一頁</a></li>
+                    </ul>
+                </div>
+            </div>
+         </form>
+    </div>
+{% endblock %}

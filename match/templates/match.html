@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block title %} 資工產媒-產學媒合 {% endblock %}
+{% block headmessage %}
+    <header>
+        <h2>助教榜單公布</h2>
+        <p>目前榜單.</p>
+    </header>
+{% endblock %}
+{% block content %}
+    <div class="box">
+        <form method="POST" action="">
+            {% csrf_token %}
+            <div class="row gtr-50 gtr-uniform">
+                <div class="col-12">
+                    {% if message %}
+                        <div class="alert alert-warning" style="color: red">{{message}}</div>
+                    {% endif %}
+                </div>
+                <div class="col-12">
+                    <table>
+                        <tbody>
+                            {% for unit in result_ob%}
+                                <tr>
+                                    <td>恭喜   {{ unit.student.name }} 同學</td>
+                                    <td>錄取 : {{ unit.company.name }} </td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-12">
+                <ul class="actions special">
+                    <li><input type="submit" onclick="return(confirm('確定媒合'))" value="確認媒合結果" /></li>
+                </ul>
+                </div>
+            </div>
+        </form>
+    </div>
+{% endblock %}

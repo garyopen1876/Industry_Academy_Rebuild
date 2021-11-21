@@ -45,7 +45,7 @@ INSTALLED_APPS = [
     'manager',
     'inter_ship',
     'tutor',
-    #'match',
+    'match',
     #'django_q',
     #'easy_thumbnails',
     #'image_cropping',

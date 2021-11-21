@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block title %} 資工產媒-放榜結果 {% endblock %}
+{% block headmessage %}
+    <header>
+        <h2>學生錄取結果</h2>
+        <p>確認您的錄取結果取並考慮是否放棄.</p>
+    </header>
+{% endblock %}
+{% block content %}
+    <form method="POST" action="">
+        {% csrf_token %}
+        <div class="row gtr-50 gtr-uniform">
+            <div class="col-12">
+                {% if message %}
+                    <div class="alert alert-warning" style="color: red">{{message}}</div>
+                {% endif %}
+            </div>
+            <div class="col-12">
+                <table>
+                    {% for unit in show_result %}
+　                       <tr><td align="center">{{ unit }}</td></tr>
+                    {% endfor %}
+                </table>
+            </div>
+            <div class="col-12">
+                <ul class="actions special">
+                    <input type="submit" onclick="return(confirm('請注意當你放棄名額，視同放棄本次媒合機會確認前請三思!!!'))" value="我要放棄名額" />
+                </ul>
+            </div>
+            <div class=" col-10 col-12-mobilep">
+            </div>
+            <div class=" col-2 col-12-mobilep">
+                <ul class="actions special">
+                    <li><a href="/system/student" class="button alt small icon fa-reply">上一頁</a></li>
+                </ul>
+            </div>
+        </div>
+    </form>
+{% endblock %}

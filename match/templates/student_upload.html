@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+{% block title %} 資工產媒-履歷與投遞公司 {% endblock %}
+{% block headmessage %}
+    <header>
+        <h2>學生履歷與投遞公司</h2>
+        <p>上傳履歷檔案及投履的企業公司.</p>
+    </header>
+{% endblock %}
+{% block content %}
+    <div class="box">
+        <form method="POST" action="#" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="row gtr-50 gtr-uniform">
+                <div class="col-12">
+                    {% if message %}
+                        <div class="alert alert-warning" style="color: red">{{message}}</div>
+                    {% endif %}
+                </div>
+                <div class="col-12">
+                    <h3 style="color: #79aec8">上傳履歷</h3>
+                </div>
+                <div class="col-6 col-12-mobilep">
+                        <input type="file" name="resume"/>﹝上傳格式為 pdf 檔﹞
+                </div>
+                <div class="col-6 col-12-mobilep">
+                    {% if showCheck == 1 %}
+                        <strong>已上傳履歷：</strong>
+                        <a href="/media/{{ resume_ob.resume }}" target="_blank">瀏覽履歷</a>
+                    {% else %}
+                        <p>無履歷！</p>
+                    {% endif %}
+                </div>
+                <div class="col-12">
+                    <ul class="actions special">
+                        <li><input type="submit" value="送出[履歷]" name="postResume"/></li>
+                    </ul>
+                </div>
+                <div class="col-12">
+                    <hr/>
+                    <h3 style="color: #79aec8">投遞公司</h3>
+                </div>
+                <div class="col-12">
+                    <h4>您最新一次投遞的公司：</h4>
+                </div>
+                {% for unit in check_admission %}
+                    <div class="col-4 col-12-mobilep">
+                        <h4>{{ unit.company.name }}</h4>
+                        <p style="color: #79aec8; width: 100%;height: 100%">{{ unit.vacancy }}</p>
+                    </div>
+                {% endfor %}
+                <div class="col-12" align="center">
+                    <h3 style="border: double">選擇想投履歷的公司</h3>
+                </div>
+                <div class="col-12">
+                    <p style="color: blue">選擇公司並填寫應徵職缺，複數職缺請用「；」隔開！</p>
+                </div>
+                {% for company in company_units %}
+                    <div class="col-6 col-12-narrower">
+                        <input type="checkbox" id="{{ company.name }}" name="fcompany" value="{{ company.name }}">
+                        <label for="{{ company.name }}">
+                            {{ company.name }}
+                            <input type="text" style="width: 100%;height: 100%" name="vacancy{{ company.user.username }}" id="vacancy{{ company.user.username }}" value="" maxlength="100">
+                        </label>
+                    </div>
+                {% endfor %}
+                <p>
+                <div class="col-12">
+                    <ul class="actions special">
+                        <li><input type="submit" value="送出[投遞公司]" name="postAdmission"/></li>
+                    </ul>
+                </div>
+                <div class=" col-10 col-12-mobilep">
+                </div>
+                <div class=" col-2 col-12-mobilep">
+                    <ul class="actions special">
+                        <li><a href="/system/student" class="button alt small icon fa-reply">上一頁</a></li>
+                    </ul>
+                </div>
+            </div>
+        </form>
+    </div>
+{% endblock %}

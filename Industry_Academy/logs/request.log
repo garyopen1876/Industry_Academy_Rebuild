@@ -363,3 +363,8 @@ django.contrib.auth.models.User.profile.RelatedObjectDoesNotExist: User has no p
 [21/Nov/2021 20:20:09] WARNING [django.request:230] Not Found: /favicon.ico
 [21/Nov/2021 20:20:10] WARNING [django.request:230] Not Found: /report
 [21/Nov/2021 20:21:41] WARNING [django.request:230] Not Found: /listCompany
+[21/Nov/2021 20:39:28] WARNING [django.request:230] Not Found: /system/manager/match
+[21/Nov/2021 20:39:32] WARNING [django.request:230] Not Found: /system/manager/managerCompany
+[21/Nov/2021 20:39:37] WARNING [django.request:230] Not Found: /system/manager/match
+[21/Nov/2021 20:39:40] WARNING [django.request:230] Not Found: //match
+[21/Nov/2021 21:00:58] WARNING [django.request:230] Not Found: /system/manager/managerStudentCompany

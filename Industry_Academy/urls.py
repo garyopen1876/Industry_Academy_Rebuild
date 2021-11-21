@@ -39,7 +39,4 @@ urlpatterns = [
     #path('message_board/', include('message_board.urls')),
 
 
-    #path('accounts/NID/login/callback/', web.nid_callback),
-
-
 ]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -4880,3 +4880,1424 @@ Traceback (most recent call last):
   File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 850, in _resolve_lookup
     (bit, current))  # missing attribute
 django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <module 'inter_ship.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\inter_ship\\urls.py'> (None:None) 'inter_ship/'>
+[21/Nov/2021 20:39:01] DEBUG [django.template:873] Exception while resolving variable 'message' in template 'system.html'.
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'message'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'RequestContext' has no attribute 'message'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'message'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [message] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: '1eNyqLWpAKB77R3hBNdA1xDp7jowO5EKZNA9gNRUuZb4YQBgrKMsluec4djYEEg0'>, 'request': <WSGIRequest: GET '/personal_index/'>, 'user': <SimpleLazyObject: <django.contrib.auth.models.AnonymousUser object at 0x000002AF2412CE80>>, 'perms': <django.contrib.auth.context_processors.PermWrapper object at 0x000002AF2412C320>, 'messages': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x000002AF2419CBE0>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}, 'MEDIA_URL': '/media/'}, {}, {'nid_login_url': 'https://opendata.fcu.edu.tw/fcuOauth/Auth.aspx?client_id=637178106413.30124fe008d0449f9695cc94b7613ede.140.134.24.239&client_url=http://127.0.0.1:8000/accounts/NID/login/callback/', 'request': <WSGIRequest: GET '/personal_index/'>}, {'block': <Block Node: content. Contents: [<TextNode: '\n    <section class="box '>, <Variable Node: nid_login_url>, <TextNode: '">¾Ç¥Íµn¤J</a></h3>\n         '>, <django.template.defaulttags.CsrfTokenNode object at 0x000002AF240DB8D0>, <TextNode: '\n                    '>, <IfNode>, <TextNode: '\n                    <div'>]>}]
+[21/Nov/2021 20:39:28] DEBUG [django.template:873] Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\core\handlers\base.py", line 167, in _get_response
+    callback, callback_args, callback_kwargs = self.resolve_request(request)
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\core\handlers\base.py", line 290, in resolve_request
+    resolver_match = resolver.resolve(request.path_info)
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\urls\resolvers.py", line 585, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLPattern '' [name='index']>], [<URLPattern 'logout/' [name='logout']>], [<URLPattern 'change_password/' [name='change_password']>], [<URLPattern 'personal_index/' [name='personal_index']>], [<URLPattern 'news/list/' [name='news_list']>], [<URLPattern 'news/detail/<int:message_id>/' [name='news_detail']>], [<URLResolver <module 'student.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\student\\urls.py'> (None:None) 'student/'>], [<URLResolver <module 'company.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\company\\urls.py'> (None:None) 'company/'>], [<URLResolver <module 'manager.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\manager\\urls.py'> (None:None) 'manager/'>], [<URLResolver <module 'tutor.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\tutor\\urls.py'> (None:None) 'tutor/'>], [<URLResolver <module 'match.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\match\\urls.py'> (None:None) 'match/'>], [<URLResolver <module 'inter_ship.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\inter_ship\\urls.py'> (None:None) 'inter_ship/'>], [<URLPattern '^media\/(?P<path>.*)$'>]], 'path': 'system/manager/match'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 837, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <URLPattern list> (admin:admin) 'admin/'>
+[21/Nov/2021 20:39:28] DEBUG [django.template:873] Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\core\handlers\base.py", line 167, in _get_response
+    callback, callback_args, callback_kwargs = self.resolve_request(request)
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\core\handlers\base.py", line 290, in resolve_request
+    resolver_match = resolver.resolve(request.path_info)
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\urls\resolvers.py", line 585, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLPattern '' [name='index']>], [<URLPattern 'logout/' [name='logout']>], [<URLPattern 'change_password/' [name='change_password']>], [<URLPattern 'personal_index/' [name='personal_index']>], [<URLPattern 'news/list/' [name='news_list']>], [<URLPattern 'news/detail/<int:message_id>/' [name='news_detail']>], [<URLResolver <module 'student.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\student\\urls.py'> (None:None) 'student/'>], [<URLResolver <module 'company.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\company\\urls.py'> (None:None) 'company/'>], [<URLResolver <module 'manager.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\manager\\urls.py'> (None:None) 'manager/'>], [<URLResolver <module 'tutor.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\tutor\\urls.py'> (None:None) 'tutor/'>], [<URLResolver <module 'match.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\match\\urls.py'> (None:None) 'match/'>], [<URLResolver <module 'inter_ship.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\inter_ship\\urls.py'> (None:None) 'inter_ship/'>], [<URLPattern '^media\/(?P<path>.*)$'>]], 'path': 'system/manager/match'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 837, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <module 'student.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\student\\urls.py'> (None:None) 'student/'>
+[21/Nov/2021 20:39:28] DEBUG [django.template:873] Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\core\handlers\base.py", line 167, in _get_response
+    callback, callback_args, callback_kwargs = self.resolve_request(request)
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\core\handlers\base.py", line 290, in resolve_request
+    resolver_match = resolver.resolve(request.path_info)
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\urls\resolvers.py", line 585, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLPattern '' [name='index']>], [<URLPattern 'logout/' [name='logout']>], [<URLPattern 'change_password/' [name='change_password']>], [<URLPattern 'personal_index/' [name='personal_index']>], [<URLPattern 'news/list/' [name='news_list']>], [<URLPattern 'news/detail/<int:message_id>/' [name='news_detail']>], [<URLResolver <module 'student.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\student\\urls.py'> (None:None) 'student/'>], [<URLResolver <module 'company.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\company\\urls.py'> (None:None) 'company/'>], [<URLResolver <module 'manager.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\manager\\urls.py'> (None:None) 'manager/'>], [<URLResolver <module 'tutor.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\tutor\\urls.py'> (None:None) 'tutor/'>], [<URLResolver <module 'match.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\match\\urls.py'> (None:None) 'match/'>], [<URLResolver <module 'inter_ship.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\inter_ship\\urls.py'> (None:None) 'inter_ship/'>], [<URLPattern '^media\/(?P<path>.*)$'>]], 'path': 'system/manager/match'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 837, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <module 'company.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\company\\urls.py'> (None:None) 'company/'>
+[21/Nov/2021 20:39:28] DEBUG [django.template:873] Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\core\handlers\base.py", line 167, in _get_response
+    callback, callback_args, callback_kwargs = self.resolve_request(request)
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\core\handlers\base.py", line 290, in resolve_request
+    resolver_match = resolver.resolve(request.path_info)
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\urls\resolvers.py", line 585, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLPattern '' [name='index']>], [<URLPattern 'logout/' [name='logout']>], [<URLPattern 'change_password/' [name='change_password']>], [<URLPattern 'personal_index/' [name='personal_index']>], [<URLPattern 'news/list/' [name='news_list']>], [<URLPattern 'news/detail/<int:message_id>/' [name='news_detail']>], [<URLResolver <module 'student.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\student\\urls.py'> (None:None) 'student/'>], [<URLResolver <module 'company.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\company\\urls.py'> (None:None) 'company/'>], [<URLResolver <module 'manager.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\manager\\urls.py'> (None:None) 'manager/'>], [<URLResolver <module 'tutor.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\tutor\\urls.py'> (None:None) 'tutor/'>], [<URLResolver <module 'match.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\match\\urls.py'> (None:None) 'match/'>], [<URLResolver <module 'inter_ship.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\inter_ship\\urls.py'> (None:None) 'inter_ship/'>], [<URLPattern '^media\/(?P<path>.*)$'>]], 'path': 'system/manager/match'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 837, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <module 'manager.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\manager\\urls.py'> (None:None) 'manager/'>
+[21/Nov/2021 20:39:28] DEBUG [django.template:873] Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\core\handlers\base.py", line 167, in _get_response
+    callback, callback_args, callback_kwargs = self.resolve_request(request)
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\core\handlers\base.py", line 290, in resolve_request
+    resolver_match = resolver.resolve(request.path_info)
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\urls\resolvers.py", line 585, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLPattern '' [name='index']>], [<URLPattern 'logout/' [name='logout']>], [<URLPattern 'change_password/' [name='change_password']>], [<URLPattern 'personal_index/' [name='personal_index']>], [<URLPattern 'news/list/' [name='news_list']>], [<URLPattern 'news/detail/<int:message_id>/' [name='news_detail']>], [<URLResolver <module 'student.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\student\\urls.py'> (None:None) 'student/'>], [<URLResolver <module 'company.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\company\\urls.py'> (None:None) 'company/'>], [<URLResolver <module 'manager.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\manager\\urls.py'> (None:None) 'manager/'>], [<URLResolver <module 'tutor.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\tutor\\urls.py'> (None:None) 'tutor/'>], [<URLResolver <module 'match.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\match\\urls.py'> (None:None) 'match/'>], [<URLResolver <module 'inter_ship.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\inter_ship\\urls.py'> (None:None) 'inter_ship/'>], [<URLPattern '^media\/(?P<path>.*)$'>]], 'path': 'system/manager/match'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 837, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <module 'tutor.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\tutor\\urls.py'> (None:None) 'tutor/'>
+[21/Nov/2021 20:39:28] DEBUG [django.template:873] Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\core\handlers\base.py", line 167, in _get_response
+    callback, callback_args, callback_kwargs = self.resolve_request(request)
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\core\handlers\base.py", line 290, in resolve_request
+    resolver_match = resolver.resolve(request.path_info)
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\urls\resolvers.py", line 585, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLPattern '' [name='index']>], [<URLPattern 'logout/' [name='logout']>], [<URLPattern 'change_password/' [name='change_password']>], [<URLPattern 'personal_index/' [name='personal_index']>], [<URLPattern 'news/list/' [name='news_list']>], [<URLPattern 'news/detail/<int:message_id>/' [name='news_detail']>], [<URLResolver <module 'student.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\student\\urls.py'> (None:None) 'student/'>], [<URLResolver <module 'company.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\company\\urls.py'> (None:None) 'company/'>], [<URLResolver <module 'manager.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\manager\\urls.py'> (None:None) 'manager/'>], [<URLResolver <module 'tutor.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\tutor\\urls.py'> (None:None) 'tutor/'>], [<URLResolver <module 'match.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\match\\urls.py'> (None:None) 'match/'>], [<URLResolver <module 'inter_ship.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\inter_ship\\urls.py'> (None:None) 'inter_ship/'>], [<URLPattern '^media\/(?P<path>.*)$'>]], 'path': 'system/manager/match'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 837, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <module 'match.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\match\\urls.py'> (None:None) 'match/'>
+[21/Nov/2021 20:39:28] DEBUG [django.template:873] Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\core\handlers\base.py", line 167, in _get_response
+    callback, callback_args, callback_kwargs = self.resolve_request(request)
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\core\handlers\base.py", line 290, in resolve_request
+    resolver_match = resolver.resolve(request.path_info)
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\urls\resolvers.py", line 585, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLPattern '' [name='index']>], [<URLPattern 'logout/' [name='logout']>], [<URLPattern 'change_password/' [name='change_password']>], [<URLPattern 'personal_index/' [name='personal_index']>], [<URLPattern 'news/list/' [name='news_list']>], [<URLPattern 'news/detail/<int:message_id>/' [name='news_detail']>], [<URLResolver <module 'student.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\student\\urls.py'> (None:None) 'student/'>], [<URLResolver <module 'company.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\company\\urls.py'> (None:None) 'company/'>], [<URLResolver <module 'manager.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\manager\\urls.py'> (None:None) 'manager/'>], [<URLResolver <module 'tutor.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\tutor\\urls.py'> (None:None) 'tutor/'>], [<URLResolver <module 'match.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\match\\urls.py'> (None:None) 'match/'>], [<URLResolver <module 'inter_ship.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\inter_ship\\urls.py'> (None:None) 'inter_ship/'>], [<URLPattern '^media\/(?P<path>.*)$'>]], 'path': 'system/manager/match'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 837, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <module 'inter_ship.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\inter_ship\\urls.py'> (None:None) 'inter_ship/'>
+[21/Nov/2021 20:39:32] DEBUG [django.template:873] Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\core\handlers\base.py", line 167, in _get_response
+    callback, callback_args, callback_kwargs = self.resolve_request(request)
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\core\handlers\base.py", line 290, in resolve_request
+    resolver_match = resolver.resolve(request.path_info)
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\urls\resolvers.py", line 585, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLPattern '' [name='index']>], [<URLPattern 'logout/' [name='logout']>], [<URLPattern 'change_password/' [name='change_password']>], [<URLPattern 'personal_index/' [name='personal_index']>], [<URLPattern 'news/list/' [name='news_list']>], [<URLPattern 'news/detail/<int:message_id>/' [name='news_detail']>], [<URLResolver <module 'student.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\student\\urls.py'> (None:None) 'student/'>], [<URLResolver <module 'company.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\company\\urls.py'> (None:None) 'company/'>], [<URLResolver <module 'manager.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\manager\\urls.py'> (None:None) 'manager/'>], [<URLResolver <module 'tutor.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\tutor\\urls.py'> (None:None) 'tutor/'>], [<URLResolver <module 'match.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\match\\urls.py'> (None:None) 'match/'>], [<URLResolver <module 'inter_ship.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\inter_ship\\urls.py'> (None:None) 'inter_ship/'>], [<URLPattern '^media\/(?P<path>.*)$'>]], 'path': 'system/manager/managerCompany'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 837, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <URLPattern list> (admin:admin) 'admin/'>
+[21/Nov/2021 20:39:32] DEBUG [django.template:873] Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\core\handlers\base.py", line 167, in _get_response
+    callback, callback_args, callback_kwargs = self.resolve_request(request)
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\core\handlers\base.py", line 290, in resolve_request
+    resolver_match = resolver.resolve(request.path_info)
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\urls\resolvers.py", line 585, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLPattern '' [name='index']>], [<URLPattern 'logout/' [name='logout']>], [<URLPattern 'change_password/' [name='change_password']>], [<URLPattern 'personal_index/' [name='personal_index']>], [<URLPattern 'news/list/' [name='news_list']>], [<URLPattern 'news/detail/<int:message_id>/' [name='news_detail']>], [<URLResolver <module 'student.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\student\\urls.py'> (None:None) 'student/'>], [<URLResolver <module 'company.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\company\\urls.py'> (None:None) 'company/'>], [<URLResolver <module 'manager.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\manager\\urls.py'> (None:None) 'manager/'>], [<URLResolver <module 'tutor.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\tutor\\urls.py'> (None:None) 'tutor/'>], [<URLResolver <module 'match.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\match\\urls.py'> (None:None) 'match/'>], [<URLResolver <module 'inter_ship.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\inter_ship\\urls.py'> (None:None) 'inter_ship/'>], [<URLPattern '^media\/(?P<path>.*)$'>]], 'path': 'system/manager/managerCompany'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 837, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <module 'student.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\student\\urls.py'> (None:None) 'student/'>
+[21/Nov/2021 20:39:32] DEBUG [django.template:873] Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\core\handlers\base.py", line 167, in _get_response
+    callback, callback_args, callback_kwargs = self.resolve_request(request)
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\core\handlers\base.py", line 290, in resolve_request
+    resolver_match = resolver.resolve(request.path_info)
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\urls\resolvers.py", line 585, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLPattern '' [name='index']>], [<URLPattern 'logout/' [name='logout']>], [<URLPattern 'change_password/' [name='change_password']>], [<URLPattern 'personal_index/' [name='personal_index']>], [<URLPattern 'news/list/' [name='news_list']>], [<URLPattern 'news/detail/<int:message_id>/' [name='news_detail']>], [<URLResolver <module 'student.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\student\\urls.py'> (None:None) 'student/'>], [<URLResolver <module 'company.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\company\\urls.py'> (None:None) 'company/'>], [<URLResolver <module 'manager.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\manager\\urls.py'> (None:None) 'manager/'>], [<URLResolver <module 'tutor.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\tutor\\urls.py'> (None:None) 'tutor/'>], [<URLResolver <module 'match.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\match\\urls.py'> (None:None) 'match/'>], [<URLResolver <module 'inter_ship.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\inter_ship\\urls.py'> (None:None) 'inter_ship/'>], [<URLPattern '^media\/(?P<path>.*)$'>]], 'path': 'system/manager/managerCompany'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 837, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <module 'company.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\company\\urls.py'> (None:None) 'company/'>
+[21/Nov/2021 20:39:32] DEBUG [django.template:873] Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\core\handlers\base.py", line 167, in _get_response
+    callback, callback_args, callback_kwargs = self.resolve_request(request)
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\core\handlers\base.py", line 290, in resolve_request
+    resolver_match = resolver.resolve(request.path_info)
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\urls\resolvers.py", line 585, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLPattern '' [name='index']>], [<URLPattern 'logout/' [name='logout']>], [<URLPattern 'change_password/' [name='change_password']>], [<URLPattern 'personal_index/' [name='personal_index']>], [<URLPattern 'news/list/' [name='news_list']>], [<URLPattern 'news/detail/<int:message_id>/' [name='news_detail']>], [<URLResolver <module 'student.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\student\\urls.py'> (None:None) 'student/'>], [<URLResolver <module 'company.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\company\\urls.py'> (None:None) 'company/'>], [<URLResolver <module 'manager.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\manager\\urls.py'> (None:None) 'manager/'>], [<URLResolver <module 'tutor.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\tutor\\urls.py'> (None:None) 'tutor/'>], [<URLResolver <module 'match.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\match\\urls.py'> (None:None) 'match/'>], [<URLResolver <module 'inter_ship.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\inter_ship\\urls.py'> (None:None) 'inter_ship/'>], [<URLPattern '^media\/(?P<path>.*)$'>]], 'path': 'system/manager/managerCompany'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 837, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <module 'manager.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\manager\\urls.py'> (None:None) 'manager/'>
+[21/Nov/2021 20:39:32] DEBUG [django.template:873] Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\core\handlers\base.py", line 167, in _get_response
+    callback, callback_args, callback_kwargs = self.resolve_request(request)
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\core\handlers\base.py", line 290, in resolve_request
+    resolver_match = resolver.resolve(request.path_info)
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\urls\resolvers.py", line 585, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLPattern '' [name='index']>], [<URLPattern 'logout/' [name='logout']>], [<URLPattern 'change_password/' [name='change_password']>], [<URLPattern 'personal_index/' [name='personal_index']>], [<URLPattern 'news/list/' [name='news_list']>], [<URLPattern 'news/detail/<int:message_id>/' [name='news_detail']>], [<URLResolver <module 'student.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\student\\urls.py'> (None:None) 'student/'>], [<URLResolver <module 'company.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\company\\urls.py'> (None:None) 'company/'>], [<URLResolver <module 'manager.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\manager\\urls.py'> (None:None) 'manager/'>], [<URLResolver <module 'tutor.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\tutor\\urls.py'> (None:None) 'tutor/'>], [<URLResolver <module 'match.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\match\\urls.py'> (None:None) 'match/'>], [<URLResolver <module 'inter_ship.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\inter_ship\\urls.py'> (None:None) 'inter_ship/'>], [<URLPattern '^media\/(?P<path>.*)$'>]], 'path': 'system/manager/managerCompany'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 837, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <module 'tutor.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\tutor\\urls.py'> (None:None) 'tutor/'>
+[21/Nov/2021 20:39:32] DEBUG [django.template:873] Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\core\handlers\base.py", line 167, in _get_response
+    callback, callback_args, callback_kwargs = self.resolve_request(request)
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\core\handlers\base.py", line 290, in resolve_request
+    resolver_match = resolver.resolve(request.path_info)
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\urls\resolvers.py", line 585, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLPattern '' [name='index']>], [<URLPattern 'logout/' [name='logout']>], [<URLPattern 'change_password/' [name='change_password']>], [<URLPattern 'personal_index/' [name='personal_index']>], [<URLPattern 'news/list/' [name='news_list']>], [<URLPattern 'news/detail/<int:message_id>/' [name='news_detail']>], [<URLResolver <module 'student.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\student\\urls.py'> (None:None) 'student/'>], [<URLResolver <module 'company.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\company\\urls.py'> (None:None) 'company/'>], [<URLResolver <module 'manager.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\manager\\urls.py'> (None:None) 'manager/'>], [<URLResolver <module 'tutor.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\tutor\\urls.py'> (None:None) 'tutor/'>], [<URLResolver <module 'match.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\match\\urls.py'> (None:None) 'match/'>], [<URLResolver <module 'inter_ship.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\inter_ship\\urls.py'> (None:None) 'inter_ship/'>], [<URLPattern '^media\/(?P<path>.*)$'>]], 'path': 'system/manager/managerCompany'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 837, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <module 'match.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\match\\urls.py'> (None:None) 'match/'>
+[21/Nov/2021 20:39:32] DEBUG [django.template:873] Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\core\handlers\base.py", line 167, in _get_response
+    callback, callback_args, callback_kwargs = self.resolve_request(request)
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\core\handlers\base.py", line 290, in resolve_request
+    resolver_match = resolver.resolve(request.path_info)
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\urls\resolvers.py", line 585, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLPattern '' [name='index']>], [<URLPattern 'logout/' [name='logout']>], [<URLPattern 'change_password/' [name='change_password']>], [<URLPattern 'personal_index/' [name='personal_index']>], [<URLPattern 'news/list/' [name='news_list']>], [<URLPattern 'news/detail/<int:message_id>/' [name='news_detail']>], [<URLResolver <module 'student.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\student\\urls.py'> (None:None) 'student/'>], [<URLResolver <module 'company.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\company\\urls.py'> (None:None) 'company/'>], [<URLResolver <module 'manager.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\manager\\urls.py'> (None:None) 'manager/'>], [<URLResolver <module 'tutor.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\tutor\\urls.py'> (None:None) 'tutor/'>], [<URLResolver <module 'match.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\match\\urls.py'> (None:None) 'match/'>], [<URLResolver <module 'inter_ship.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\inter_ship\\urls.py'> (None:None) 'inter_ship/'>], [<URLPattern '^media\/(?P<path>.*)$'>]], 'path': 'system/manager/managerCompany'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 837, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <module 'inter_ship.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\inter_ship\\urls.py'> (None:None) 'inter_ship/'>
+[21/Nov/2021 20:39:37] DEBUG [django.template:873] Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\core\handlers\base.py", line 167, in _get_response
+    callback, callback_args, callback_kwargs = self.resolve_request(request)
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\core\handlers\base.py", line 290, in resolve_request
+    resolver_match = resolver.resolve(request.path_info)
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\urls\resolvers.py", line 585, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLPattern '' [name='index']>], [<URLPattern 'logout/' [name='logout']>], [<URLPattern 'change_password/' [name='change_password']>], [<URLPattern 'personal_index/' [name='personal_index']>], [<URLPattern 'news/list/' [name='news_list']>], [<URLPattern 'news/detail/<int:message_id>/' [name='news_detail']>], [<URLResolver <module 'student.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\student\\urls.py'> (None:None) 'student/'>], [<URLResolver <module 'company.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\company\\urls.py'> (None:None) 'company/'>], [<URLResolver <module 'manager.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\manager\\urls.py'> (None:None) 'manager/'>], [<URLResolver <module 'tutor.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\tutor\\urls.py'> (None:None) 'tutor/'>], [<URLResolver <module 'match.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\match\\urls.py'> (None:None) 'match/'>], [<URLResolver <module 'inter_ship.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\inter_ship\\urls.py'> (None:None) 'inter_ship/'>], [<URLPattern '^media\/(?P<path>.*)$'>]], 'path': 'system/manager/match'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 837, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <URLPattern list> (admin:admin) 'admin/'>
+[21/Nov/2021 20:39:37] DEBUG [django.template:873] Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\core\handlers\base.py", line 167, in _get_response
+    callback, callback_args, callback_kwargs = self.resolve_request(request)
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\core\handlers\base.py", line 290, in resolve_request
+    resolver_match = resolver.resolve(request.path_info)
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\urls\resolvers.py", line 585, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLPattern '' [name='index']>], [<URLPattern 'logout/' [name='logout']>], [<URLPattern 'change_password/' [name='change_password']>], [<URLPattern 'personal_index/' [name='personal_index']>], [<URLPattern 'news/list/' [name='news_list']>], [<URLPattern 'news/detail/<int:message_id>/' [name='news_detail']>], [<URLResolver <module 'student.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\student\\urls.py'> (None:None) 'student/'>], [<URLResolver <module 'company.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\company\\urls.py'> (None:None) 'company/'>], [<URLResolver <module 'manager.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\manager\\urls.py'> (None:None) 'manager/'>], [<URLResolver <module 'tutor.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\tutor\\urls.py'> (None:None) 'tutor/'>], [<URLResolver <module 'match.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\match\\urls.py'> (None:None) 'match/'>], [<URLResolver <module 'inter_ship.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\inter_ship\\urls.py'> (None:None) 'inter_ship/'>], [<URLPattern '^media\/(?P<path>.*)$'>]], 'path': 'system/manager/match'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 837, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <module 'student.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\student\\urls.py'> (None:None) 'student/'>
+[21/Nov/2021 20:39:37] DEBUG [django.template:873] Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\core\handlers\base.py", line 167, in _get_response
+    callback, callback_args, callback_kwargs = self.resolve_request(request)
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\core\handlers\base.py", line 290, in resolve_request
+    resolver_match = resolver.resolve(request.path_info)
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\urls\resolvers.py", line 585, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLPattern '' [name='index']>], [<URLPattern 'logout/' [name='logout']>], [<URLPattern 'change_password/' [name='change_password']>], [<URLPattern 'personal_index/' [name='personal_index']>], [<URLPattern 'news/list/' [name='news_list']>], [<URLPattern 'news/detail/<int:message_id>/' [name='news_detail']>], [<URLResolver <module 'student.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\student\\urls.py'> (None:None) 'student/'>], [<URLResolver <module 'company.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\company\\urls.py'> (None:None) 'company/'>], [<URLResolver <module 'manager.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\manager\\urls.py'> (None:None) 'manager/'>], [<URLResolver <module 'tutor.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\tutor\\urls.py'> (None:None) 'tutor/'>], [<URLResolver <module 'match.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\match\\urls.py'> (None:None) 'match/'>], [<URLResolver <module 'inter_ship.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\inter_ship\\urls.py'> (None:None) 'inter_ship/'>], [<URLPattern '^media\/(?P<path>.*)$'>]], 'path': 'system/manager/match'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 837, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <module 'company.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\company\\urls.py'> (None:None) 'company/'>
+[21/Nov/2021 20:39:37] DEBUG [django.template:873] Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\core\handlers\base.py", line 167, in _get_response
+    callback, callback_args, callback_kwargs = self.resolve_request(request)
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\core\handlers\base.py", line 290, in resolve_request
+    resolver_match = resolver.resolve(request.path_info)
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\urls\resolvers.py", line 585, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLPattern '' [name='index']>], [<URLPattern 'logout/' [name='logout']>], [<URLPattern 'change_password/' [name='change_password']>], [<URLPattern 'personal_index/' [name='personal_index']>], [<URLPattern 'news/list/' [name='news_list']>], [<URLPattern 'news/detail/<int:message_id>/' [name='news_detail']>], [<URLResolver <module 'student.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\student\\urls.py'> (None:None) 'student/'>], [<URLResolver <module 'company.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\company\\urls.py'> (None:None) 'company/'>], [<URLResolver <module 'manager.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\manager\\urls.py'> (None:None) 'manager/'>], [<URLResolver <module 'tutor.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\tutor\\urls.py'> (None:None) 'tutor/'>], [<URLResolver <module 'match.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\match\\urls.py'> (None:None) 'match/'>], [<URLResolver <module 'inter_ship.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\inter_ship\\urls.py'> (None:None) 'inter_ship/'>], [<URLPattern '^media\/(?P<path>.*)$'>]], 'path': 'system/manager/match'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 837, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <module 'manager.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\manager\\urls.py'> (None:None) 'manager/'>
+[21/Nov/2021 20:39:37] DEBUG [django.template:873] Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\core\handlers\base.py", line 167, in _get_response
+    callback, callback_args, callback_kwargs = self.resolve_request(request)
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\core\handlers\base.py", line 290, in resolve_request
+    resolver_match = resolver.resolve(request.path_info)
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\urls\resolvers.py", line 585, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLPattern '' [name='index']>], [<URLPattern 'logout/' [name='logout']>], [<URLPattern 'change_password/' [name='change_password']>], [<URLPattern 'personal_index/' [name='personal_index']>], [<URLPattern 'news/list/' [name='news_list']>], [<URLPattern 'news/detail/<int:message_id>/' [name='news_detail']>], [<URLResolver <module 'student.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\student\\urls.py'> (None:None) 'student/'>], [<URLResolver <module 'company.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\company\\urls.py'> (None:None) 'company/'>], [<URLResolver <module 'manager.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\manager\\urls.py'> (None:None) 'manager/'>], [<URLResolver <module 'tutor.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\tutor\\urls.py'> (None:None) 'tutor/'>], [<URLResolver <module 'match.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\match\\urls.py'> (None:None) 'match/'>], [<URLResolver <module 'inter_ship.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\inter_ship\\urls.py'> (None:None) 'inter_ship/'>], [<URLPattern '^media\/(?P<path>.*)$'>]], 'path': 'system/manager/match'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 837, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <module 'tutor.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\tutor\\urls.py'> (None:None) 'tutor/'>
+[21/Nov/2021 20:39:37] DEBUG [django.template:873] Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\core\handlers\base.py", line 167, in _get_response
+    callback, callback_args, callback_kwargs = self.resolve_request(request)
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\core\handlers\base.py", line 290, in resolve_request
+    resolver_match = resolver.resolve(request.path_info)
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\urls\resolvers.py", line 585, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLPattern '' [name='index']>], [<URLPattern 'logout/' [name='logout']>], [<URLPattern 'change_password/' [name='change_password']>], [<URLPattern 'personal_index/' [name='personal_index']>], [<URLPattern 'news/list/' [name='news_list']>], [<URLPattern 'news/detail/<int:message_id>/' [name='news_detail']>], [<URLResolver <module 'student.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\student\\urls.py'> (None:None) 'student/'>], [<URLResolver <module 'company.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\company\\urls.py'> (None:None) 'company/'>], [<URLResolver <module 'manager.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\manager\\urls.py'> (None:None) 'manager/'>], [<URLResolver <module 'tutor.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\tutor\\urls.py'> (None:None) 'tutor/'>], [<URLResolver <module 'match.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\match\\urls.py'> (None:None) 'match/'>], [<URLResolver <module 'inter_ship.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\inter_ship\\urls.py'> (None:None) 'inter_ship/'>], [<URLPattern '^media\/(?P<path>.*)$'>]], 'path': 'system/manager/match'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 837, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <module 'match.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\match\\urls.py'> (None:None) 'match/'>
+[21/Nov/2021 20:39:37] DEBUG [django.template:873] Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\core\handlers\base.py", line 167, in _get_response
+    callback, callback_args, callback_kwargs = self.resolve_request(request)
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\core\handlers\base.py", line 290, in resolve_request
+    resolver_match = resolver.resolve(request.path_info)
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\urls\resolvers.py", line 585, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLPattern '' [name='index']>], [<URLPattern 'logout/' [name='logout']>], [<URLPattern 'change_password/' [name='change_password']>], [<URLPattern 'personal_index/' [name='personal_index']>], [<URLPattern 'news/list/' [name='news_list']>], [<URLPattern 'news/detail/<int:message_id>/' [name='news_detail']>], [<URLResolver <module 'student.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\student\\urls.py'> (None:None) 'student/'>], [<URLResolver <module 'company.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\company\\urls.py'> (None:None) 'company/'>], [<URLResolver <module 'manager.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\manager\\urls.py'> (None:None) 'manager/'>], [<URLResolver <module 'tutor.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\tutor\\urls.py'> (None:None) 'tutor/'>], [<URLResolver <module 'match.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\match\\urls.py'> (None:None) 'match/'>], [<URLResolver <module 'inter_ship.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\inter_ship\\urls.py'> (None:None) 'inter_ship/'>], [<URLPattern '^media\/(?P<path>.*)$'>]], 'path': 'system/manager/match'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 837, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <module 'inter_ship.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\inter_ship\\urls.py'> (None:None) 'inter_ship/'>
+[21/Nov/2021 20:39:40] DEBUG [django.template:873] Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\core\handlers\base.py", line 167, in _get_response
+    callback, callback_args, callback_kwargs = self.resolve_request(request)
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\core\handlers\base.py", line 290, in resolve_request
+    resolver_match = resolver.resolve(request.path_info)
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\urls\resolvers.py", line 585, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLPattern '' [name='index']>], [<URLPattern 'logout/' [name='logout']>], [<URLPattern 'change_password/' [name='change_password']>], [<URLPattern 'personal_index/' [name='personal_index']>], [<URLPattern 'news/list/' [name='news_list']>], [<URLPattern 'news/detail/<int:message_id>/' [name='news_detail']>], [<URLResolver <module 'student.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\student\\urls.py'> (None:None) 'student/'>], [<URLResolver <module 'company.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\company\\urls.py'> (None:None) 'company/'>], [<URLResolver <module 'manager.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\manager\\urls.py'> (None:None) 'manager/'>], [<URLResolver <module 'tutor.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\tutor\\urls.py'> (None:None) 'tutor/'>], [<URLResolver <module 'match.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\match\\urls.py'> (None:None) 'match/'>], [<URLResolver <module 'inter_ship.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\inter_ship\\urls.py'> (None:None) 'inter_ship/'>], [<URLPattern '^media\/(?P<path>.*)$'>]], 'path': '/match'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 837, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <URLPattern list> (admin:admin) 'admin/'>
+[21/Nov/2021 20:39:40] DEBUG [django.template:873] Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\core\handlers\base.py", line 167, in _get_response
+    callback, callback_args, callback_kwargs = self.resolve_request(request)
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\core\handlers\base.py", line 290, in resolve_request
+    resolver_match = resolver.resolve(request.path_info)
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\urls\resolvers.py", line 585, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLPattern '' [name='index']>], [<URLPattern 'logout/' [name='logout']>], [<URLPattern 'change_password/' [name='change_password']>], [<URLPattern 'personal_index/' [name='personal_index']>], [<URLPattern 'news/list/' [name='news_list']>], [<URLPattern 'news/detail/<int:message_id>/' [name='news_detail']>], [<URLResolver <module 'student.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\student\\urls.py'> (None:None) 'student/'>], [<URLResolver <module 'company.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\company\\urls.py'> (None:None) 'company/'>], [<URLResolver <module 'manager.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\manager\\urls.py'> (None:None) 'manager/'>], [<URLResolver <module 'tutor.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\tutor\\urls.py'> (None:None) 'tutor/'>], [<URLResolver <module 'match.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\match\\urls.py'> (None:None) 'match/'>], [<URLResolver <module 'inter_ship.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\inter_ship\\urls.py'> (None:None) 'inter_ship/'>], [<URLPattern '^media\/(?P<path>.*)$'>]], 'path': '/match'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 837, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <module 'student.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\student\\urls.py'> (None:None) 'student/'>
+[21/Nov/2021 20:39:40] DEBUG [django.template:873] Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\core\handlers\base.py", line 167, in _get_response
+    callback, callback_args, callback_kwargs = self.resolve_request(request)
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\core\handlers\base.py", line 290, in resolve_request
+    resolver_match = resolver.resolve(request.path_info)
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\urls\resolvers.py", line 585, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLPattern '' [name='index']>], [<URLPattern 'logout/' [name='logout']>], [<URLPattern 'change_password/' [name='change_password']>], [<URLPattern 'personal_index/' [name='personal_index']>], [<URLPattern 'news/list/' [name='news_list']>], [<URLPattern 'news/detail/<int:message_id>/' [name='news_detail']>], [<URLResolver <module 'student.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\student\\urls.py'> (None:None) 'student/'>], [<URLResolver <module 'company.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\company\\urls.py'> (None:None) 'company/'>], [<URLResolver <module 'manager.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\manager\\urls.py'> (None:None) 'manager/'>], [<URLResolver <module 'tutor.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\tutor\\urls.py'> (None:None) 'tutor/'>], [<URLResolver <module 'match.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\match\\urls.py'> (None:None) 'match/'>], [<URLResolver <module 'inter_ship.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\inter_ship\\urls.py'> (None:None) 'inter_ship/'>], [<URLPattern '^media\/(?P<path>.*)$'>]], 'path': '/match'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 837, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <module 'company.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\company\\urls.py'> (None:None) 'company/'>
+[21/Nov/2021 20:39:40] DEBUG [django.template:873] Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\core\handlers\base.py", line 167, in _get_response
+    callback, callback_args, callback_kwargs = self.resolve_request(request)
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\core\handlers\base.py", line 290, in resolve_request
+    resolver_match = resolver.resolve(request.path_info)
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\urls\resolvers.py", line 585, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLPattern '' [name='index']>], [<URLPattern 'logout/' [name='logout']>], [<URLPattern 'change_password/' [name='change_password']>], [<URLPattern 'personal_index/' [name='personal_index']>], [<URLPattern 'news/list/' [name='news_list']>], [<URLPattern 'news/detail/<int:message_id>/' [name='news_detail']>], [<URLResolver <module 'student.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\student\\urls.py'> (None:None) 'student/'>], [<URLResolver <module 'company.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\company\\urls.py'> (None:None) 'company/'>], [<URLResolver <module 'manager.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\manager\\urls.py'> (None:None) 'manager/'>], [<URLResolver <module 'tutor.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\tutor\\urls.py'> (None:None) 'tutor/'>], [<URLResolver <module 'match.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\match\\urls.py'> (None:None) 'match/'>], [<URLResolver <module 'inter_ship.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\inter_ship\\urls.py'> (None:None) 'inter_ship/'>], [<URLPattern '^media\/(?P<path>.*)$'>]], 'path': '/match'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 837, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <module 'manager.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\manager\\urls.py'> (None:None) 'manager/'>
+[21/Nov/2021 20:39:40] DEBUG [django.template:873] Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\core\handlers\base.py", line 167, in _get_response
+    callback, callback_args, callback_kwargs = self.resolve_request(request)
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\core\handlers\base.py", line 290, in resolve_request
+    resolver_match = resolver.resolve(request.path_info)
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\urls\resolvers.py", line 585, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLPattern '' [name='index']>], [<URLPattern 'logout/' [name='logout']>], [<URLPattern 'change_password/' [name='change_password']>], [<URLPattern 'personal_index/' [name='personal_index']>], [<URLPattern 'news/list/' [name='news_list']>], [<URLPattern 'news/detail/<int:message_id>/' [name='news_detail']>], [<URLResolver <module 'student.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\student\\urls.py'> (None:None) 'student/'>], [<URLResolver <module 'company.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\company\\urls.py'> (None:None) 'company/'>], [<URLResolver <module 'manager.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\manager\\urls.py'> (None:None) 'manager/'>], [<URLResolver <module 'tutor.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\tutor\\urls.py'> (None:None) 'tutor/'>], [<URLResolver <module 'match.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\match\\urls.py'> (None:None) 'match/'>], [<URLResolver <module 'inter_ship.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\inter_ship\\urls.py'> (None:None) 'inter_ship/'>], [<URLPattern '^media\/(?P<path>.*)$'>]], 'path': '/match'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 837, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <module 'tutor.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\tutor\\urls.py'> (None:None) 'tutor/'>
+[21/Nov/2021 20:39:40] DEBUG [django.template:873] Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\core\handlers\base.py", line 167, in _get_response
+    callback, callback_args, callback_kwargs = self.resolve_request(request)
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\core\handlers\base.py", line 290, in resolve_request
+    resolver_match = resolver.resolve(request.path_info)
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\urls\resolvers.py", line 585, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLPattern '' [name='index']>], [<URLPattern 'logout/' [name='logout']>], [<URLPattern 'change_password/' [name='change_password']>], [<URLPattern 'personal_index/' [name='personal_index']>], [<URLPattern 'news/list/' [name='news_list']>], [<URLPattern 'news/detail/<int:message_id>/' [name='news_detail']>], [<URLResolver <module 'student.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\student\\urls.py'> (None:None) 'student/'>], [<URLResolver <module 'company.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\company\\urls.py'> (None:None) 'company/'>], [<URLResolver <module 'manager.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\manager\\urls.py'> (None:None) 'manager/'>], [<URLResolver <module 'tutor.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\tutor\\urls.py'> (None:None) 'tutor/'>], [<URLResolver <module 'match.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\match\\urls.py'> (None:None) 'match/'>], [<URLResolver <module 'inter_ship.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\inter_ship\\urls.py'> (None:None) 'inter_ship/'>], [<URLPattern '^media\/(?P<path>.*)$'>]], 'path': '/match'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 837, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <module 'match.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\match\\urls.py'> (None:None) 'match/'>
+[21/Nov/2021 20:39:40] DEBUG [django.template:873] Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\core\handlers\base.py", line 167, in _get_response
+    callback, callback_args, callback_kwargs = self.resolve_request(request)
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\core\handlers\base.py", line 290, in resolve_request
+    resolver_match = resolver.resolve(request.path_info)
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\urls\resolvers.py", line 585, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLPattern '' [name='index']>], [<URLPattern 'logout/' [name='logout']>], [<URLPattern 'change_password/' [name='change_password']>], [<URLPattern 'personal_index/' [name='personal_index']>], [<URLPattern 'news/list/' [name='news_list']>], [<URLPattern 'news/detail/<int:message_id>/' [name='news_detail']>], [<URLResolver <module 'student.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\student\\urls.py'> (None:None) 'student/'>], [<URLResolver <module 'company.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\company\\urls.py'> (None:None) 'company/'>], [<URLResolver <module 'manager.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\manager\\urls.py'> (None:None) 'manager/'>], [<URLResolver <module 'tutor.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\tutor\\urls.py'> (None:None) 'tutor/'>], [<URLResolver <module 'match.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\match\\urls.py'> (None:None) 'match/'>], [<URLResolver <module 'inter_ship.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\inter_ship\\urls.py'> (None:None) 'inter_ship/'>], [<URLPattern '^media\/(?P<path>.*)$'>]], 'path': '/match'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 837, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <module 'inter_ship.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\inter_ship\\urls.py'> (None:None) 'inter_ship/'>
+[21/Nov/2021 20:39:42] DEBUG [django.template:873] Exception while resolving variable 'message' in template 'match.html'.
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'message'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'RequestContext' has no attribute 'message'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'message'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [message] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: 'j3Hd5m9WlrGYIcWV2hDhXhackm2kPRazIx2pBguDrESSdb3tGGrQ5ELjYmiloldP'>, 'request': <WSGIRequest: GET '/match/'>, 'user': <SimpleLazyObject: <User: garyopen>>, 'perms': <django.contrib.auth.context_processors.PermWrapper object at 0x000002AF24136EF0>, 'messages': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x000002AF241361D0>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}, 'MEDIA_URL': '/media/'}, {}, {'result_ob': <QuerySet []>, 'request': <WSGIRequest: GET '/match/'>}, {'block': <Block Node: content. Contents: [<TextNode: '\n    <div class="box">\n  '>, <django.template.defaulttags.CsrfTokenNode object at 0x000002AF2407A198>, <TextNode: '\n            <div class="'>, <IfNode>, <TextNode: '\n                </div>\n '>, <ForNode: for unit in result_ob, tail_len: 5>, <TextNode: '\n                        '>]>}]
+[21/Nov/2021 21:00:58] DEBUG [django.template:873] Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\core\handlers\base.py", line 167, in _get_response
+    callback, callback_args, callback_kwargs = self.resolve_request(request)
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\core\handlers\base.py", line 290, in resolve_request
+    resolver_match = resolver.resolve(request.path_info)
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\urls\resolvers.py", line 585, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLPattern '' [name='index']>], [<URLPattern 'logout/' [name='logout']>], [<URLPattern 'change_password/' [name='change_password']>], [<URLPattern 'personal_index/' [name='personal_index']>], [<URLPattern 'news/list/' [name='news_list']>], [<URLPattern 'news/detail/<int:message_id>/' [name='news_detail']>], [<URLResolver <module 'student.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\student\\urls.py'> (None:None) 'student/'>], [<URLResolver <module 'company.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\company\\urls.py'> (None:None) 'company/'>], [<URLResolver <module 'manager.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\manager\\urls.py'> (None:None) 'manager/'>], [<URLResolver <module 'tutor.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\tutor\\urls.py'> (None:None) 'tutor/'>], [<URLResolver <module 'match.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\match\\urls.py'> (None:None) 'match/'>], [<URLResolver <module 'inter_ship.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\inter_ship\\urls.py'> (None:None) 'inter_ship/'>], [<URLPattern '^media\/(?P<path>.*)$'>]], 'path': 'system/manager/managerStudentCompany'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 837, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <URLPattern list> (admin:admin) 'admin/'>
+[21/Nov/2021 21:00:58] DEBUG [django.template:873] Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\core\handlers\base.py", line 167, in _get_response
+    callback, callback_args, callback_kwargs = self.resolve_request(request)
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\core\handlers\base.py", line 290, in resolve_request
+    resolver_match = resolver.resolve(request.path_info)
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\urls\resolvers.py", line 585, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLPattern '' [name='index']>], [<URLPattern 'logout/' [name='logout']>], [<URLPattern 'change_password/' [name='change_password']>], [<URLPattern 'personal_index/' [name='personal_index']>], [<URLPattern 'news/list/' [name='news_list']>], [<URLPattern 'news/detail/<int:message_id>/' [name='news_detail']>], [<URLResolver <module 'student.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\student\\urls.py'> (None:None) 'student/'>], [<URLResolver <module 'company.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\company\\urls.py'> (None:None) 'company/'>], [<URLResolver <module 'manager.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\manager\\urls.py'> (None:None) 'manager/'>], [<URLResolver <module 'tutor.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\tutor\\urls.py'> (None:None) 'tutor/'>], [<URLResolver <module 'match.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\match\\urls.py'> (None:None) 'match/'>], [<URLResolver <module 'inter_ship.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\inter_ship\\urls.py'> (None:None) 'inter_ship/'>], [<URLPattern '^media\/(?P<path>.*)$'>]], 'path': 'system/manager/managerStudentCompany'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 837, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <module 'student.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\student\\urls.py'> (None:None) 'student/'>
+[21/Nov/2021 21:00:58] DEBUG [django.template:873] Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\core\handlers\base.py", line 167, in _get_response
+    callback, callback_args, callback_kwargs = self.resolve_request(request)
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\core\handlers\base.py", line 290, in resolve_request
+    resolver_match = resolver.resolve(request.path_info)
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\urls\resolvers.py", line 585, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLPattern '' [name='index']>], [<URLPattern 'logout/' [name='logout']>], [<URLPattern 'change_password/' [name='change_password']>], [<URLPattern 'personal_index/' [name='personal_index']>], [<URLPattern 'news/list/' [name='news_list']>], [<URLPattern 'news/detail/<int:message_id>/' [name='news_detail']>], [<URLResolver <module 'student.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\student\\urls.py'> (None:None) 'student/'>], [<URLResolver <module 'company.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\company\\urls.py'> (None:None) 'company/'>], [<URLResolver <module 'manager.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\manager\\urls.py'> (None:None) 'manager/'>], [<URLResolver <module 'tutor.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\tutor\\urls.py'> (None:None) 'tutor/'>], [<URLResolver <module 'match.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\match\\urls.py'> (None:None) 'match/'>], [<URLResolver <module 'inter_ship.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\inter_ship\\urls.py'> (None:None) 'inter_ship/'>], [<URLPattern '^media\/(?P<path>.*)$'>]], 'path': 'system/manager/managerStudentCompany'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 837, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <module 'company.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\company\\urls.py'> (None:None) 'company/'>
+[21/Nov/2021 21:00:58] DEBUG [django.template:873] Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\core\handlers\base.py", line 167, in _get_response
+    callback, callback_args, callback_kwargs = self.resolve_request(request)
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\core\handlers\base.py", line 290, in resolve_request
+    resolver_match = resolver.resolve(request.path_info)
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\urls\resolvers.py", line 585, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLPattern '' [name='index']>], [<URLPattern 'logout/' [name='logout']>], [<URLPattern 'change_password/' [name='change_password']>], [<URLPattern 'personal_index/' [name='personal_index']>], [<URLPattern 'news/list/' [name='news_list']>], [<URLPattern 'news/detail/<int:message_id>/' [name='news_detail']>], [<URLResolver <module 'student.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\student\\urls.py'> (None:None) 'student/'>], [<URLResolver <module 'company.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\company\\urls.py'> (None:None) 'company/'>], [<URLResolver <module 'manager.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\manager\\urls.py'> (None:None) 'manager/'>], [<URLResolver <module 'tutor.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\tutor\\urls.py'> (None:None) 'tutor/'>], [<URLResolver <module 'match.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\match\\urls.py'> (None:None) 'match/'>], [<URLResolver <module 'inter_ship.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\inter_ship\\urls.py'> (None:None) 'inter_ship/'>], [<URLPattern '^media\/(?P<path>.*)$'>]], 'path': 'system/manager/managerStudentCompany'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 837, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <module 'manager.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\manager\\urls.py'> (None:None) 'manager/'>
+[21/Nov/2021 21:00:58] DEBUG [django.template:873] Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\core\handlers\base.py", line 167, in _get_response
+    callback, callback_args, callback_kwargs = self.resolve_request(request)
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\core\handlers\base.py", line 290, in resolve_request
+    resolver_match = resolver.resolve(request.path_info)
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\urls\resolvers.py", line 585, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLPattern '' [name='index']>], [<URLPattern 'logout/' [name='logout']>], [<URLPattern 'change_password/' [name='change_password']>], [<URLPattern 'personal_index/' [name='personal_index']>], [<URLPattern 'news/list/' [name='news_list']>], [<URLPattern 'news/detail/<int:message_id>/' [name='news_detail']>], [<URLResolver <module 'student.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\student\\urls.py'> (None:None) 'student/'>], [<URLResolver <module 'company.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\company\\urls.py'> (None:None) 'company/'>], [<URLResolver <module 'manager.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\manager\\urls.py'> (None:None) 'manager/'>], [<URLResolver <module 'tutor.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\tutor\\urls.py'> (None:None) 'tutor/'>], [<URLResolver <module 'match.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\match\\urls.py'> (None:None) 'match/'>], [<URLResolver <module 'inter_ship.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\inter_ship\\urls.py'> (None:None) 'inter_ship/'>], [<URLPattern '^media\/(?P<path>.*)$'>]], 'path': 'system/manager/managerStudentCompany'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 837, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <module 'tutor.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\tutor\\urls.py'> (None:None) 'tutor/'>
+[21/Nov/2021 21:00:58] DEBUG [django.template:873] Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\core\handlers\base.py", line 167, in _get_response
+    callback, callback_args, callback_kwargs = self.resolve_request(request)
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\core\handlers\base.py", line 290, in resolve_request
+    resolver_match = resolver.resolve(request.path_info)
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\urls\resolvers.py", line 585, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLPattern '' [name='index']>], [<URLPattern 'logout/' [name='logout']>], [<URLPattern 'change_password/' [name='change_password']>], [<URLPattern 'personal_index/' [name='personal_index']>], [<URLPattern 'news/list/' [name='news_list']>], [<URLPattern 'news/detail/<int:message_id>/' [name='news_detail']>], [<URLResolver <module 'student.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\student\\urls.py'> (None:None) 'student/'>], [<URLResolver <module 'company.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\company\\urls.py'> (None:None) 'company/'>], [<URLResolver <module 'manager.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\manager\\urls.py'> (None:None) 'manager/'>], [<URLResolver <module 'tutor.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\tutor\\urls.py'> (None:None) 'tutor/'>], [<URLResolver <module 'match.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\match\\urls.py'> (None:None) 'match/'>], [<URLResolver <module 'inter_ship.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\inter_ship\\urls.py'> (None:None) 'inter_ship/'>], [<URLPattern '^media\/(?P<path>.*)$'>]], 'path': 'system/manager/managerStudentCompany'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 837, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <module 'match.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\match\\urls.py'> (None:None) 'match/'>
+[21/Nov/2021 21:00:58] DEBUG [django.template:873] Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\core\handlers\base.py", line 167, in _get_response
+    callback, callback_args, callback_kwargs = self.resolve_request(request)
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\core\handlers\base.py", line 290, in resolve_request
+    resolver_match = resolver.resolve(request.path_info)
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\urls\resolvers.py", line 585, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLPattern '' [name='index']>], [<URLPattern 'logout/' [name='logout']>], [<URLPattern 'change_password/' [name='change_password']>], [<URLPattern 'personal_index/' [name='personal_index']>], [<URLPattern 'news/list/' [name='news_list']>], [<URLPattern 'news/detail/<int:message_id>/' [name='news_detail']>], [<URLResolver <module 'student.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\student\\urls.py'> (None:None) 'student/'>], [<URLResolver <module 'company.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\company\\urls.py'> (None:None) 'company/'>], [<URLResolver <module 'manager.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\manager\\urls.py'> (None:None) 'manager/'>], [<URLResolver <module 'tutor.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\tutor\\urls.py'> (None:None) 'tutor/'>], [<URLResolver <module 'match.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\match\\urls.py'> (None:None) 'match/'>], [<URLResolver <module 'inter_ship.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\inter_ship\\urls.py'> (None:None) 'inter_ship/'>], [<URLPattern '^media\/(?P<path>.*)$'>]], 'path': 'system/manager/managerStudentCompany'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 837, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\template\base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <module 'inter_ship.urls' from 'C:\\Users\\user\\PycharmProjects\\Industry_Academy\\inter_ship\\urls.py'> (None:None) 'inter_ship/'>

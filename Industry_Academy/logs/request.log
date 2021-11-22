@@ -372,3 +372,17 @@ django.contrib.auth.models.User.profile.RelatedObjectDoesNotExist: User has no p
 [22/Nov/2021 11:24:34] WARNING [django.request:230] Not Found: /system/manager/postManage
 [22/Nov/2021 11:24:43] WARNING [django.request:230] Not Found: /system/manager
 [22/Nov/2021 11:24:46] WARNING [django.request:230] Not Found: /system/manager/postNew
+[22/Nov/2021 13:36:42] WARNING [django.request:230] Not Found: /manager/match
+[22/Nov/2021 13:38:03] WARNING [django.request:230] Not Found: /listCompany
+[22/Nov/2021 13:38:58] WARNING [django.request:230] Not Found: /manager/managerStudentCompany
+[22/Nov/2021 13:39:07] WARNING [django.request:230] Not Found: /managerStudentCompany
+[22/Nov/2021 13:46:44] WARNING [django.request:230] Not Found: /system/manager/postManage
+[22/Nov/2021 13:48:34] WARNING [django.request:230] Not Found: /post/detail/1
+[22/Nov/2021 13:48:43] WARNING [django.request:230] Not Found: /detail/1
+[22/Nov/2021 13:48:53] ERROR [django.request:230] Internal Server Error: /manager/postDel/1/
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\user\PycharmProjects\Industry_Academy\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+TypeError: delete_post() got an unexpected keyword argument 'post_del_id'

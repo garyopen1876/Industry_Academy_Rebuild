@@ -19,7 +19,7 @@ def show_manager(request):
             message = '登入成功！'
         else:
             message = '身分錯誤！請先登出切換身分！'
-            return redirect('/system')
+            return redirect('/personal_index')
         return render(request, 'manager.html', locals())
     else:
         return redirect('')
@@ -54,7 +54,7 @@ def create_user(request):
                 message = '請輸入新用戶資料！'
         else:
             message = '身分錯誤！請先登出切換身分！'
-            return redirect('/system')
+            return redirect('/personal_index')
         return render(request, 'creat_user.html', locals())
     else:
         return redirect('')
@@ -69,7 +69,7 @@ def post_manage(request):
             message_units = Message.objects.filter().order_by('-created')
         else:
             message = '身分錯誤！請先登出切換身分！'
-            return redirect('/system')
+            return redirect('/personal_index')
         return render(request, 'post_manage.html', locals())
     else:
         return redirect('')
@@ -90,12 +90,12 @@ def add_post(request):
                                                           created=datetime.datetime.now())
                     post_message.url = message_file
                     post_message.save()
-                    return redirect('/system/manager/postManage')
+                    return redirect('/manager/postManage')
             else:
                 message = '新增公佈欄訊息！'
         else:
             message = '身分錯誤！請先登出切換身分！'
-            return redirect('/system')
+            return redirect('/personal_index')
         return render(request, 'add_post.html', locals())
     else:
         return redirect('')
@@ -108,10 +108,10 @@ def delete_post(request, post_id=None):
             unit = Message.objects.get(id=post_id)
             if request.method == 'POST':
                 unit.delete()
-                return redirect('/system/manager/postManage')
+                return redirect('/manager/postManage')
         else:
             message = '身分錯誤！請先登出切換身分！'
-            return redirect('/system')
+            return redirect('/personal_index')
         return render(request, 'delete_post.html', locals())
     else:
         return redirect('')
@@ -134,12 +134,12 @@ def edit_post(request, post_id=None):
                         unit.url = message_file
                     unit.message_Created = datetime.datetime.now()
                     unit.save()
-                    return redirect('/system/manager/postManage')
+                    return redirect('/manager/postManage')
             else:
                 message = '修改公佈欄訊息！'
         else:
             message = '身分錯誤！請先登出切換身分！'
-            return redirect('/system')
+            return redirect('/personal_index')
         return render(request, 'edit_post.html', locals())
     else:
         return redirect('')
@@ -160,7 +160,7 @@ def schedule(request):
                 message = '請選擇要開關的功能！'
         else:
             message = '身分錯誤！請先登出切換身分！'
-            return redirect('/system')
+            return redirect('/personal_index')
         return render(request, 'schedule.html', locals())
     else:
         return redirect('')
@@ -173,7 +173,7 @@ def company_list(request):
             company_ob = Company.objects.all()
         else:
             message = '身分錯誤！請先登出切換身分！'
-            return redirect('/system')
+            return redirect('/personal_index')
         return render(request, 'company_list.html', locals())
     else:
         return redirect('')
@@ -189,7 +189,7 @@ def company_list_detail(request, manager_company_detail_id=None):
                 show_vacancy = check_vacancy
         else:
             message = '身分錯誤！請先登出切換身分！'
-            return redirect('/system')
+            return redirect('/personal_index')
         return render(request, 'company_list_detail.html', locals())
     else:
         return redirect('')

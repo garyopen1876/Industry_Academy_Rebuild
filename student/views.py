@@ -14,7 +14,7 @@ def show_student(request):
             check_result = Function.objects.filter(function='學生放榜結果')
         else:
             message = '身分錯誤！請先登出切換身分！'
-            return redirect('/system')
+            return redirect('/personal_index')
         return render(request, 'student.html', locals())
     else:
         return redirect('')
@@ -29,10 +29,10 @@ def student_information(request, student_id=None):
                 unit = Student.objects.get(user=request.user)
             else:
                 message = '使用者個人資料未定義!'
-                return redirect('/system/student/studentEdit')
+                return redirect('/student/studentEdit')
         else:
             message = '身分錯誤！請先登出切換身分！'
-            return redirect('/system')
+            return redirect('/personal_index')
         return render(request, 'student_information.html', locals())
     else:
         return redirect('')
@@ -68,7 +68,7 @@ def student_edit(request):
                 message = '請個人輸入資料！'
         else:
             message = '身分錯誤！請先登出切換身分！'
-            return redirect('/system')
+            return redirect('/personal_index')
         return render(request, 'student_edit.html', locals())
     else:
         return redirect('')

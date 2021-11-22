@@ -7,9 +7,14 @@
     manager -- 管理者(學校助教)相關功能  
     tutor -- 企業以及學校導師相關功能  
     student -- 學生相關功能  
-    inter_ship -- 實習報告相關功能(預計增設功能)
+    inter_ship -- 實習報告相關功能(預計增設功能)    
     match -- 媒合系統與其相關功能  
-
+    
+  Day3 開始修復部分破損的舊功能與添加新功能  
+   修復大部分html的urls錯誤的問題  
+   將web的message_board model移至  
+   company_information編輯無法寫入資料庫的問題  
+   新增company_contact_person的相關功能  
 # 常用指令
   建立migration資料檔   
     python manage.py makemigrations (+ 資料夾檔案 --> 指定migration)  

@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Function
+from .models import Message, Function
 
 
 class FunctionAdmin(admin.ModelAdmin):
@@ -7,5 +7,10 @@ class FunctionAdmin(admin.ModelAdmin):
     search_fields = [field.name for field in Function._meta.fields]
 
 
-admin.site.register(Function, FunctionAdmin)
+class MessageAdmin(admin.ModelAdmin):
+    list_display = [field.name for field in Message._meta.fields]
+    search_fields = [field.name for field in Message._meta.fields]
 
+
+admin.site.register(Function, FunctionAdmin)
+admin.site.register(Message, MessageAdmin)

@@ -2,7 +2,7 @@ import datetime  # 時間
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from .models import *
-from web.models import Profile, Message
+from web.models import Profile
 from company.models import Company, VacancyRequirement
 
 

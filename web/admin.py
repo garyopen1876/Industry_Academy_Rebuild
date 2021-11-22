@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 from django.contrib.auth.models import User
-from .models import Message, Profile
+from .models import Profile
 
 
 class ProfileInline(admin.StackedInline):
@@ -35,11 +35,6 @@ class CustomUserAdmin(UserAdmin):
         return super(CustomUserAdmin, self).get_inline_instances(request, obj)
 
 
-class MessageAdmin(admin.ModelAdmin):
-    list_display = [field.name for field in Message._meta.fields]
-    search_fields = [field.name for field in Message._meta.fields]
-
-
 admin.site.unregister(User)
 admin.site.register(User, CustomUserAdmin)
-admin.site.register(Message, MessageAdmin)
+

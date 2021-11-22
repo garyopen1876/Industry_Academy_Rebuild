@@ -6,6 +6,7 @@ from Industry_Academy.settings import NID_CLIENT_ID  # 使用setting資料
 from .models import *
 from .forms import ContactForm
 from django.core.mail import send_mail, BadHeaderError
+from manager.models import Message
 
 
 logger = logging.getLogger('debug')

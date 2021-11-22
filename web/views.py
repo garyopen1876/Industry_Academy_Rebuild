@@ -95,7 +95,7 @@ def change_password(request):
                         user.set_password(new)
                         user.save()
                         message = '修改密碼成功！'
-                        return redirect('/system')
+                        return redirect('/personal_index')
                     else:
                         message = '新密碼格式錯誤 or 兩次密碼不正確！'
                 else:

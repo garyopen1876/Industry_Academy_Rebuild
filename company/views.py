@@ -14,7 +14,7 @@ def show_company(request):
         check_result = Function.objects.filter(function='企業放榜結果')
     else:
         message = '身分錯誤！請先登出切換身分！'
-        return redirect('/system')
+        return redirect('/personal_index')
     return render(request, 'company.html', locals())
 
 
@@ -132,6 +132,58 @@ def company_edit(request):
             message = '身分錯誤！請先登出切換身分！'
             return redirect('/personal_index')
         return render(request, 'company_edit.html', locals())
+    else:
+        return redirect('')
+
+
+# 企業-聯絡人資訊
+def company_contact_person_information(request):
+    if request.user.is_authenticated:
+        if request.user.profile.role == Profile.COMPANY:
+            check_user = ContactPerson.objects.filter(user=request.user)
+            if check_user.exists():
+                    unit = check_user.get()
+            else:
+                message = '請填寫聯絡人資訊'
+                return redirect('/companyContactPersonEdit')
+        else:
+            message = '身分錯誤！請先登出切換身分！'
+            return redirect('/personal_index')
+        return render(request, 'company_contact_person_information.html', locals())
+    else:
+        return redirect('')
+
+
+# 企業-聯絡人編輯
+def company_contact_person_edit(request):
+    if request.user.is_authenticated:
+        if request.user.profile.role == Profile.COMPANY:
+            check_user = ContactPerson.objects.filter(user=request.user)
+            if check_user.exists():
+                unit = check_user.get()
+
+                if request.method == 'POST':
+                    unit.contact_persons = request.user.profile
+                    unit.name = request.POST['name']
+                    unit.phone = request.POST['phone']
+                    unit.email = request.POST['email']
+                    unit.save()
+                    message = '修改資料成功！'
+            else:
+                if request.method == 'POST':
+                    c_contact_persons = request.user.profile
+                    c_name = request.POST['name']
+                    c_phone = request.POST['phone']
+                    c_email = request.POST['email']
+
+                    unit = ContactPerson.objects.create(contact_persons=check_user.get(), name=c_name, phone=c_phone,
+                                                        email=c_email)
+                    unit.save()
+                    message = '資料上傳成功！'
+        else:
+            message = '身分錯誤！請先登出切換身分！'
+            return redirect('/personal_index')
+        return render(request, 'company_contact_person_edit.html', locals())
     else:
         return redirect('')
 

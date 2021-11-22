@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% block title %} 資工產媒-企業負責人資料編輯 {% endblock %}
+{% block headmessage %}
+    <header>
+        <h2>編輯企業負責人資訊</h2>
+        <p>企業負責人相關資料.</p>
+    </header>
+{% endblock %}
+{% block content %}
+    <div class="box">
+        <form method="POST" action="#" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="row gtr-50 gtr-uniform">
+                <div class="col-12">
+                    {% if message %}
+                        <div class="alert alert-warning" style="color: red">{{message}}</div>
+                    {% endif %}
+                </div>
+                <div class="col-12">
+                    <h3 style="color: #79aec8">企業負責人基本資料</h3>
+                </div>
+                <div class="col-12">
+                    <h4>姓名 *</h4>
+                    <input type="text" name="name" id="name" value="{{ unit.name }}" maxlength="30" required/>
+                </div>
+                <div class="col-6 col-12-mobilep">
+                    <h4>電話 *</h4>
+                    <input type="text" name="phone" id="phone" value="{{ unit.phone }}" maxlength="20" required/>
+                </div>
+                <div class="col-6 col-12-mobilep">
+                    <h4>email *</h4>
+                    <input type="text" name="email" id="email" value="{{ unit.email }}" maxlength="50" required/>
+                </div>
+                <div class="col-12">
+                    <ul class="actions special">
+                        <li><input type="submit" value="送出" /></li>
+                        <li><input type="reset" value="清除重填" /></li>
+                    </ul>
+                </div>
+                <div class=" col-10 col-12-mobilep">
+                </div>
+                <div class=" col-2 col-12-mobilep">
+                    <ul class="actions special">
+                        <li><a href="/company/companyContactPersonInformation" class="button alt small icon fa-reply">上一頁</a></li>
+                    </ul>
+                </div>
+            </div>
+        </form>
+    </div>
+{% endblock %}

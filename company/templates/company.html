@@ -19,29 +19,38 @@
                 <p>企業公司的相關資料</p>
             </section>
             <section>
+                <span class="icon major fa-id-card accent4"></span>
+                {% if check_user.exists %}
+                    <h3><a href="/company/companyContactPersonInformation">企業負責人資訊</a></h3>
+                {% else %}
+                    <h3><a href="/company/companyContactPersonEdit">編輯企業負責人資訊</a></h3>
+                {% endif %}
+                <p>企業負責人的相關資料</p>
+            </section>
+        </div>
+        <div class="features-row">
+            <section>
                 <span class="icon major fa-file accent4"></span>
                 <h3><a href="/company/companyUpload">新增職位資訊</a></h3>
                 <p>填寫所需的職位名稱、條件和名額</p>
             </section>
-        </div>
-        <div class="features-row">
             <section>
                 <span class="icon major fa-arrow-circle-up accent2"></span>
                 <h3><a href="/match/companyResume">履歷審察</a></h3>
                 <p>觀看學生們的履歷</p>
             </section>
+        </div>
+        <div class="features-row">
             <section>
                 <span class="icon major fa-edit accent4"></span>
                 <h3><a href="/match/companyAdmission">正備取結果</a></h3>
                 <p>填寫學生們的正備取與職位</p>
             </section>
-        </div>
-        <div class="features-row">
-            <br>
-            <br>
-            <span class="icon major fa-book accent5"></span>
-            <h3><a href="/match/companyResult">放榜結果</a></h3>
-            <p>媒合錄取結果</p>
+            <section>
+                <span class="icon major fa-book accent5"></span>
+                <h3><a href="/match/companyResult">放榜結果</a></h3>
+                <p>媒合錄取結果</p>
+            </section>
         </div>
     </section>
 {% endblock %}

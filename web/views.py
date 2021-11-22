@@ -105,7 +105,7 @@ def change_password(request):
                 message = '請輸入舊密碼與新密碼！'
         else:
             message = '身分錯誤！請先登出切換身分！'
-            return redirect('/system')
+            return redirect('/personal_index')
         return render(request, 'change_password.html', locals())
     else:
         return redirect('')

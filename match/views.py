@@ -73,7 +73,7 @@ def student_upload(request, company_id=None):
                                     unit.resume = resume
                                     unit.save()
                                     message = '履歷上傳成功！'
-                                return redirect('/system/match/studentUpload')
+                                return redirect('/match/studentUpload')
                         else:
                             message = '請選擇檔案！ 格式為 pdf 檔!'
                     # 選擇填寫投遞公司
@@ -111,10 +111,10 @@ def student_upload(request, company_id=None):
                             message = '請先上傳履歷!'
             else:
                 message = '使用者個人資料未定義!'
-                return redirect('/system/student/studentEdit')
+                return redirect('/student/studentEdit')
         else:
             message = '身分錯誤！請先登出切換身分 or 功能未開放！'
-            return redirect('/system')
+            return redirect('/personal_index')
         return render(request, "student_upload.html", locals())
     else:
         return redirect('')
@@ -135,10 +135,10 @@ def student_sort_information(request):
                     message = '您並未在期限內上傳個人履歷，請聯絡助教詳談!'
             else:
                 message = '使用者個人資料未定義!'
-                return redirect('/system/student/studentEdit')
+                return redirect('/student/studentEdit')
         else:
             message = '身分錯誤！請先登出切換身分 or 功能尚未開放！'
-            return redirect('/system')
+            return redirect('/personal_index')
         return render(request, 'student_sort_information.html', locals())
     else:
         return redirect('')
@@ -156,13 +156,13 @@ def student_feedback(request, feedback_id=None):
                     unit = Admission.objects.get(id=feedback_id)
                 else:
                     message = '並未投此公司履歷！'
-                    return redirect('/system/student')
+                    return redirect('/student')
             else:
                 message = '使用者個人資料未定義!'
-                return redirect('/system/student/studentEdit')
+                return redirect('/student/studentEdit')
         else:
             message = '身分錯誤！請先登出切換身分 or 功能尚未開放！'
-            return redirect('/system')
+            return redirect('/personal_index')
         return render(request, 'student_feedback.html', locals())
     else:
         return redirect('')
@@ -196,15 +196,15 @@ def student_sort(request):
                                 unit.volunteer_order = v_sort
                                 unit.save()
                             message = '資料上傳成功!'
-                            return redirect('/system/match/studentSortInformation')
+                            return redirect('/match/studentSortInformation')
                 else:
                     message = '您並未在期限內上傳個人履歷，請聯絡助教詳談!'
             else:
                 message = '使用者個人資料未定義!'
-                return redirect('/system/student/studentEdit')
+                return redirect('/student/studentEdit')
         else:
             message = '身分錯誤！請先登出切換身分 or 功能尚未開放！'
-            return redirect('/system')
+            return redirect('/personal_index')
         return render(request, 'student_sort.html', locals())
     else:
         return redirect('')
@@ -221,13 +221,13 @@ def show_company_resume_list(request):
                         units = check_company.get()
                 else:
                     message = '使用者個人資料未定義 or 功能尚未開放！'
-                    return redirect('/system/company/companyEdit')
+                    return redirect('/company/companyEdit')
             else:
                 message = '無此負責人'
-                return redirect('/system/company')
+                return redirect('/company')
         else:
             message = '身分錯誤！請先登出切換身分！'
-            return redirect('/system')
+            return redirect('/personal_index')
         return render(request, 'show_company_resume_list.html', locals())
     else:
         return redirect('')
@@ -255,16 +255,16 @@ def company_review(request, resume_id=None):
                             message = '請輸入資料！'
                     else:
                         message = '這位學生沒有投這間公司履歷！'
-                        return redirect('/system/company/')
+                        return redirect('/company/')
                 else:
                     message = '使用者個人資料未定義!'
-                    return redirect('/system/company/companyEdit')
+                    return redirect('/company/companyEdit')
             else:
                 message = '無此負責人'
-                return redirect('/system/company')
+                return redirect('/company')
         else:
             message = '身分錯誤！請先登出切換身分 or 功能尚未開放！'
-            return redirect('/system')
+            return redirect('/personal_index')
         return render(request, 'company_review.html', locals())
     else:
         return redirect('')
@@ -291,16 +291,16 @@ def company_remark(request, resume_id=None):
                             message = '請輸入資料！'
                     else:
                         message = '這位學生沒有投這間公司履歷！'
-                        return redirect('/system/company/')
+                        return redirect('/company/')
                 else:
                     message = '使用者個人資料未定義!'
-                    return redirect('/system/company/companyEdit')
+                    return redirect('/company/companyEdit')
             else:
                 message = '無此負責人'
-                return redirect('/system/company')
+                return redirect('/company')
         else:
             message = '身分錯誤！請先登出切換身分 or 功能尚未開放！'
-            return redirect('/system')
+            return redirect('/personal_index')
         return render(request, 'company_remark.html', locals())
     else:
         return redirect('')
@@ -380,13 +380,13 @@ def company_admission(request):
                         message = '請填寫正備取！'
                 else:
                     message = '使用者個人資料未定義 or 功能尚未開放！'
-                    return redirect('/system/company/companyEdit')
+                    return redirect('/company/companyEdit')
             else:
                 message = '無此負責人'
-                return redirect('/system/company')
+                return redirect('/company')
         else:
             message = '身分錯誤！請先登出切換身分！'
-            return redirect('/system')
+            return redirect('/personal_index')
         return render(request, 'company_admission.html', locals())
     else:
         return redirect('')
@@ -414,13 +414,13 @@ def company_result(request):
                         message = '未有員工'
                 else:
                     message = '企業資料未定義!'
-                    return redirect('/system/company/companyEdit')
+                    return redirect('/company/companyEdit')
             else:
                 message = '無此負責人'
-                return redirect('/system/company')
+                return redirect('/company')
         else:
             message = '身分錯誤！請先登出切換身分！'
-            return redirect('/system')
+            return redirect('/personal_index')
         return render(request, 'company_result.html', locals())
     else:
         return redirect('')
@@ -433,7 +433,7 @@ def manager_student_company(request):
             company_ob = Company.objects.all()
         else:
             message = '身分錯誤！請先登出切換身分！'
-            return redirect('/system')
+            return redirect('/personal_index')
         return render(request, 'manager_student_company.html', locals())
     else:
         return redirect('')
@@ -675,10 +675,10 @@ def student_result(request):
                     message = '您已放棄本次媒合，如有疑問請聯絡助教!'
             else:
                 message = '使用者個人資料未定義 or 功能尚未開放！'
-                return redirect('/system/student/studentEdit')
+                return redirect('/student/studentEdit')
         else:
             message = '身分錯誤！請先登出切換身分！'
-            return redirect('/system')
+            return redirect('/personal_index')
         return render(request, 'student_result.html', locals())
     else:
         return redirect('')

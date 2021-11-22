@@ -29,12 +29,12 @@ def company_information(request, company_id=None):
                     unit = check_company.get()
                 else:
                     message = '企業資料未定義!'
-                    return redirect('/system/company/companyEdit')
+                    return redirect('/company/companyEdit')
             else:
                 message = '無此負責人!'
         else:
             message = '身分錯誤！請先登出切換身分！'
-            return redirect('/system')
+            return redirect('/personal_index')
         return render(request, 'company_information.html', locals())
     else:
         return redirect('')
@@ -127,10 +127,10 @@ def company_edit(request):
                             message = '資料上傳成功！'
             else:
                 message = '無此負責人'
-                return redirect('/system')
+                return redirect('/personal_index')
         else:
             message = '身分錯誤！請先登出切換身分！'
-            return redirect('/system')
+            return redirect('/personal_index')
         return render(request, 'company_edit.html', locals())
     else:
         return redirect('')
@@ -156,18 +156,18 @@ def company_upload(request):
                                 company_ob.vacancy = int(company_ob.vacancy) - int(unit.number)
                                 company_ob.save()
                                 unit.delete()
-                                return redirect('/system/company/companyUpload')
+                                return redirect('/company/companyUpload')
                     else:
                         message = '請輸入資料'
                 else:
                     message = '企業資料未定義!'
-                    return redirect('/system/company/companyEdit')
+                    return redirect('/company/companyEdit')
             else:
                 message = '無此負責人'
-                return redirect('/system')
+                return redirect('/personal_index')
         else:
             message = '身分錯誤！請先登出切換身分 or 功能尚未開放！'
-            return redirect('/system')
+            return redirect('/personal_index')
         return render(request, 'company_upload.html', locals())
     else:
         return redirect('')
@@ -194,16 +194,16 @@ def company_vacancy_new(request):
                         # 增加職位總數
                         unit.vacancy = int(unit.vacancy) + int(vacancy_number)
                         unit.save()
-                        return redirect('/system/company/companyUpload')
+                        return redirect('/company/companyUpload')
                 else:
                     message = '企業資料未定義!'
-                    return redirect('/system/company/companyEdit')
+                    return redirect('/company/companyEdit')
             else:
                 message = '無此負責人'
-                return redirect('/system')
+                return redirect('/personal_index')
         else:
             message = '身分錯誤！請先登出切換身分 or 功能尚未開放！'
-            return redirect('/system')
+            return redirect('/personal_index')
         return render(request, 'company_vacancy_new.html', locals())
     else:
         return redirect('')
@@ -221,7 +221,7 @@ def company_vacancy_edit(request, company_vacancy_edit_id=None):
                     unit = VacancyRequirement.objects.get(id=company_vacancy_edit_id)
                     # 防他公司竄改
                     if unit.company != company_ob:
-                        return redirect('/system/company')
+                        return redirect('/company')
 
                     if request.method == 'POST':
                         # 刪減原本的職位數
@@ -234,16 +234,16 @@ def company_vacancy_edit(request, company_vacancy_edit_id=None):
                         company_ob.vacancy = int(company_ob.vacancy) + int(unit.number)
                         unit.save()
                         company_ob.save()
-                        return redirect('/system/company/companyUpload')
+                        return redirect('/company/companyUpload')
                 else:
                     message = '企業資料未定義!'
-                    return redirect('/system/company/companyEdit')
+                    return redirect('/company/companyEdit')
             else:
                 message = '無此負責人'
-                return redirect('/system')
+                return redirect('/personal_index')
         else:
             message = '身分錯誤！請先登出切換身分 or 功能尚未開放！'
-            return redirect('/system')
+            return redirect('/personal_index')
         return render(request, 'company_vacancy_edit.html', locals())
     else:
         return redirect('')

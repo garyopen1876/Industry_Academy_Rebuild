@@ -5,7 +5,15 @@
             <li><a href="/">Home</a> // </li>
             <li><a href="/news/list">公佈欄</a> // </li>
             <li><a href="/personal_index">媒合系統</a> // </li>
-            <li><a href="/inter_ship">實習報告</a></li>
+            {% if request.user.profile.role == 1 %}
+                <li><a href="/inter_ship">實習報告</a></li>
+            {% elif request.user.profile.role == 2 %}
+                <li><a href="/company/companyInformation/" >企業資訊</a></li>
+            {% elif request.user.profile.role == 3 %}
+                <li><a href="/admin" >後台資料</a></li>
+            {% else %}
+                <li><a href="/inter_ship">實習報告</a></li>
+            {% endif %}
             {% if request.user.is_authenticated %}
                 <li><a href="/logout" class="button">登出</a></li>
             {% else %}

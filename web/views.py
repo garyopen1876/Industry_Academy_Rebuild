@@ -20,12 +20,12 @@ def index(request):
 # 公佈欄
 def news_list(request):
     message_units = Message.objects.filter().order_by('-created')
-    return render(request, "post.html", locals())
+    return render(request, "news.html", locals())
 
 
 # 公佈欄 詳細訊息
-def news_detail(request, detail_id=None):
-    unit = Message.objects.get(id=detail_id)
+def news_detail(request, message_id=None):
+    unit = Message.objects.get(id=message_id)
     return render(request, 'detail.html', locals())
 
 

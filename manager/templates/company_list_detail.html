@@ -16,7 +16,6 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td style="width: 50%"><b style="color: #e4886a">公司帳號ID</b>：&emsp;{{ unit.user.username }}</td>
                             <td style="width: 50%"><b style="color: #e4886a">公司名稱</b>：&emsp;{{ unit.name }}</td>
                         </tr>
                         <tr>
@@ -70,21 +69,26 @@
                         </tr>
                     </tbody>
                 </table>
-                <thead>
-                    <h3 style="color: #79aec8">企業詳細職缺</h3>
-                </thead>
-                <tbody>
-                    {% for vacancy in show_vacancy %}
-                    <tr>
-                        <td>職位名稱：{{ vacancy.name}}</td><br>
-                        <td>所需專長：</td><br>
-                        <td>{{ vacancy.required_skill|linebreaks }}</td><br>
-                        <td>職位條件內容：</td><br>
-                        <td>{{ vacancy.content|linebreaks }}</td><br>
-                        <hr size="1" align="center" width="100%">
-                    </tr>
-                    {% endfor %}
-                </tbody>
+                <table>
+                    <thead>
+                        <h3 style="color: #79aec8">企業詳細職缺</h3>
+                    </thead>
+                    <tbody>
+                        {% for vacancy in show_vacancy %}
+                        <tr>
+                            <tr>
+                                <td style="width: 50%"><b style="color: #e4886a">職位名稱</b>：&emsp;{{ vacancy.name }}</td>
+                            </tr>
+                            <tr>
+                                <td style="width: 50%"><b style="color: #e4886a">所需專長</b>：&emsp;{{ vacancy.required_skill|linebreaks }}</td>
+                            </tr>
+                            <tr>
+                                <td style="width: 50%"><b style="color: #e4886a">職位條件內容</b>：&emsp;{{ vacancy.content|linebreaks }}</td>
+                            </tr>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
             </div>
             <div class=" col-10 col-12-mobilep">
             </div>

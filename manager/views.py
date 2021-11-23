@@ -102,10 +102,10 @@ def add_post(request):
 
 
 # 助教-公佈欄編輯或刪除
-def delete_post(request, post_id=None):
+def delete_post(request, post_del_id=None):
     if request.user.is_authenticated:
         if request.user.profile.role == Profile.MANAGER:
-            unit = Message.objects.get(id=post_id)
+            unit = Message.objects.get(id=post_del_id)
             if request.method == 'POST':
                 unit.delete()
                 return redirect('/manager/postManage')
@@ -118,10 +118,10 @@ def delete_post(request, post_id=None):
 
 
 # 助教-編輯公佈欄
-def edit_post(request, post_id=None):
+def edit_post(request, post_edit_detail_id=None):
     if request.user.is_authenticated:
         if request.user.profile.role == Profile.MANAGER:
-            unit = Message.objects.get(id=post_id)
+            unit = Message.objects.get(id=post_edit_detail_id)
             if request.method == 'POST':
                 message_file = request.FILES.get('messageFile')
                 if message_file is not None and message_file.content_type.split('/')[1] != 'pdf':
@@ -184,7 +184,7 @@ def company_list_detail(request, manager_company_detail_id=None):
     if request.user.is_authenticated:
         if request.user.profile.role == Profile.MANAGER:
             unit = Company.objects.get(id=manager_company_detail_id)
-            check_vacancy = VacancyRequirement.objects.filter(name=unit)
+            check_vacancy = VacancyRequirement.objects.filter(company=unit)
             if check_vacancy.exists():
                 show_vacancy = check_vacancy
         else:

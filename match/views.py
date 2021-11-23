@@ -328,7 +328,7 @@ def company_admission(request):
                             # 先判斷此admission是否有填入職位
                             if unit_vacancy_result is not None:
                                 unit_vacancy.append(unit_vacancy_result)
-                                if unit_sort_result is not None:
+                                if unit_sort_result is None:
                                     message = unit.student.name + ' 只有填錄取職位，並未填正備取'
                                     return render(request, 'company_admission.html', locals())
                                 elif unit_sort_result == '正取':

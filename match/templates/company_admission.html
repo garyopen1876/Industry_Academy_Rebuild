@@ -42,7 +42,7 @@
                                         <td>
                                             <select style="width: 100%; height: 100%" name="{{ unit.student.user.username }}VacancyResult" id="VacancyResult">
                                                 <option value disabled selected hidden>請選擇</option>
-                                                {% for vacancy in checkVacancy %}
+                                                {% for vacancy in check_vacancy %}
                                                     <option value="{{ vacancy.name }}">{{ vacancy.name }}</option>
                                                 {% endfor %}
                                             </select>

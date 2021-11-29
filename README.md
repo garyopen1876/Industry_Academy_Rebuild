@@ -1,4 +1,5 @@
 # Industry_Academy_Rebuild(重建筆記- 讓自己重新學習 以及 警惕自己不再重蹈覆轍)
+# 重建日誌
   Day1 重新安裝環境、重建資料庫、Django由2.1升級成3.0  
     資料庫選用->由 MySQL 改成 SQLite (非主從式架構(Client–server model)，而是被整合在使用者程式中。)
   
@@ -15,11 +16,17 @@
    將web的message_board model移至  
    company_information編輯無法寫入資料庫的問題  
    新增company_contact_person的相關功能  
+   
+  Day4 將部分功能修正為較合適的狀態  
+  header 依照使用者的不同提供不同的功能(介面隔離)  
+  homepage 頁面美化  
+  media部分資料上傳(其實不應該上傳的，但為了方便紀錄製作的相關檔案)  
+  match系統的部分修正  
 # 常用指令
   建立migration資料檔   
     python manage.py makemigrations (+ 資料夾檔案 --> 指定migration)  
   資料庫同步  
     python manage.py migrate (+ 資料夾檔案--> 指定同步)  
 
-# 採雷小記
+# 提醒小記
   RateLimitMixin 在 Django3.0 已經無法使用，要考慮其他登入安全措施  

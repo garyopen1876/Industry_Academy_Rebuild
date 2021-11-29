@@ -2,7 +2,9 @@ import logging
 from django.shortcuts import render, redirect
 from django.contrib import auth
 from django.http import HttpResponse
-from Industry_Academy.settings import NID_CLIENT_ID  # 使用setting資料
+
+from Industry_Academy.local_settings import CLIENT_ID_back
+from Industry_Academy.settings import CLIENT_ID  # 使用setting資料
 from .models import *
 from .forms import ContactForm
 from django.core.mail import send_mail, BadHeaderError
@@ -31,8 +33,8 @@ def news_detail(request, message_id=None):
 
 # 媒合系統登入
 def personal_index(request):
-    nid_login_url = 'https://opendata.fcu.edu.tw/fcuOauth/Auth.aspx?client_id=' + NID_CLIENT_ID + \
-                    '&client_url=' + request.scheme + '://' + request.get_host() + '/accounts/NID/login/callback/'
+    nid_login_url = CLIENT_ID + \
+                    '&client_url=' + request.scheme + '://' + request.get_host() + CLIENT_ID_back
     if request.user.is_authenticated:  # 如果有登入，不需重複登入
         if request.user.profile.role == Profile.STUDENT:
             return redirect('/student')
@@ -123,7 +125,7 @@ def show_contact(request):
                            + '\n******此為系統自動發信，請勿直接回覆******\n'
             try:
                 logger.debug(sender_email)
-                send_mail(subject, complete_msg, sender_email, ['cassandrachan108@gmail.com'], fail_silently=False,)
+                send_mail(subject, complete_msg, sender_email, ['1123@mail.com'], fail_silently=False,)
             except BadHeaderError:
                 return HttpResponse('Invalid header found.')
             return HttpResponse('Thank you for contacting us.')

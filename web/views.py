@@ -33,7 +33,7 @@ def news_detail(request, message_id=None):
 
 # 媒合系統登入
 def personal_index(request):
-    nid_login_url = CLIENT_ID + \
+    id_login_url = CLIENT_ID + \
                     '&client_url=' + request.scheme + '://' + request.get_host() + CLIENT_ID_back
     if request.user.is_authenticated:  # 如果有登入，不需重複登入
         if request.user.profile.role == Profile.STUDENT:

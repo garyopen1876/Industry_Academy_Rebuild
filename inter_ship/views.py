@@ -1,6 +1,6 @@
 import datetime
 from django.shortcuts import render, redirect
-from Industry_Academy.settings import NID_CLIENT_ID  # 使用setting資料
+from Industry_Academy.settings import CLIENT_ID, CLIENT_ID_back  # 使用setting資料
 from .models import *
 from django.http import HttpResponse
 from student.models import Student, InterShip
@@ -10,8 +10,8 @@ from tutor.models import Tutor
 
 # 實習報告-導向
 def report(request):
-    nid_login_url = 'https://opendata.fcu.edu.tw/fcuOauth/Auth.aspx?client_id=' + NID_CLIENT_ID + \
-                    '&client_url=' + request.scheme + '://' + request.get_host() + '/accounts/NID/login/callback/'
+    id_login_url = CLIENT_ID + \
+                   '&client_url=' + request.scheme + '://' + request.get_host() + CLIENT_ID_back
     if request.user.is_authenticated:
         if request.user.profile.role == Profile.STUDENT:
             return redirect('/inter_ship/student')
@@ -22,7 +22,7 @@ def report(request):
         else:
             return HttpResponse("此為學生功能!!")
     else:
-        return redirect(nid_login_url)
+        return redirect(id_login_url)
 
 
 # 實習報告-學生
